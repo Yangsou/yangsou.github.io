@@ -1,0 +1,55 @@
+// @Author: Yangsou <wladek>
+// @Date:   2017-08-11T23:54:44+07:00
+// @Email:  namnguyentrung95@gmail.com
+// @Project: landingpage
+// @Last modified by:   wladek
+// @Last modified time: 2017-08-12T00:11:23+07:00
+// @License: MIT
+
+//defined
+a{
+  text-decoration: none;
+}
+
+//header
+.header{
+  z-index: 99;
+  // height: 80px;
+}
+
+.header-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header_brand{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.brand{
+  font-family: textBold;
+  font-size: 1.6em;
+  color: #fff;
+}
+
+.header_right{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.header_right_item{
+  display: inline-block;
+  &:not(:last-child){
+    margin-right: 16px;
+  }
+  a{
+    color: rgba(255,255,255,.89);
+    font-family: textBold;
+    // transition: color 500ms ease-in;
+    &:hover{
+      color: #fff;
+    }
+  }
+}

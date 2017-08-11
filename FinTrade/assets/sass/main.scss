@@ -1,0 +1,27 @@
+@import "component/grid";
+
+@font-face {
+  font-family: text;
+  src: url('../fonts/Mark-Simonson-Proxima-Nova-Thin_0.otf');
+}
+@font-face {
+  font-family: textItalic;
+  src: url('../fonts/Mark-Simonson-Proxima-Nova-ScOsf-Thin-Italic_0.otf');
+}
+@font-face {
+  font-family: textBold;
+  src: url('../fonts/Mark-Simonson-Proxima-Nova-Bold_0.otf');
+}
+@font-face {
+  font-family: textBoldItalic;
+  src: url('../fonts/Mark-Simonson-Proxima-Nova-Alt-Bold-Italic_0.otf');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: text;
+}
+@import "component/home";
+@import "component/header";

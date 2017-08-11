@@ -1,0 +1,112 @@
+// @Author: Yangsou <wladek>
+// @Date:   2017-08-11T14:12:27+07:00
+// @Email:  namnguyentrung95@gmail.com
+// @Project: landingpage
+// @Last modified by:   wladek
+// @Last modified time: 2017-08-11T23:57:08+07:00
+// @License: MIT
+
+
+
+/**
+* @File grid scss
+**/
+
+//settings
+$grid: (container: (width: 1200,gap: 16),columns: (max: 12,gap: 32),breakpoints: (default: xs,sm: 768,md: 992,lg: 1200));
+
+@function map-deep-get($map, $keys...){
+  @each $key in $keys{
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+$containerWidth: map-deep-get($grid, 'container', 'width');
+$containerGap: map-deep-get($grid, 'container', 'gap');
+$colMax: map-deep-get($grid, 'columns', 'max');
+$colGap: map-deep-get($grid, 'columns', 'gap');
+
+//
+.container{
+  max-width: $containerWidth * 1px;
+  margin: 0 auto;
+  @media (min-width: 768px){
+    width: 750px;
+  }
+  @media (min-width: 992px){
+    width: 970px;
+  }
+  @media (min-width: 1200px){
+    width: 1170px;
+  }
+}
+
+.container-fluid{
+  width: 100%;
+}
+
+.container,
+.container-fluid{
+    padding-left: $containerGap / 2 * 1px;
+    padding-right: $containerGap / 2 * 1px;
+  @media (min-width: 768px){
+    padding-left: $containerGap * 1px;
+    padding-right: $containerGap * 1px;
+  }
+}
+.row{
+  min-height: 1px;
+  margin-left: -($colGap / 4) * 1px;
+  margin-right: -($colGap / 4) * 1px;
+  @media (min-width: 768px){
+    margin-left: -($colGap / 2) * 1px;
+    margin-right: -($colGap / 2) * 1px;
+  }
+  &::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+[class*="col-"]{
+  float: none;
+  // width: 100%;
+  padding-left: ($colGap / 4) * 1px;
+  padding-right: ($colGap / 4) * 1px;
+  @media (min-width: 768px){
+    padding-left: ($colGap / 2) * 1px;
+    padding-right: ($colGap / 2) * 1px;
+  }
+
+}
+
+@mixin column($nameCol){
+  @for $i from 1 through $colMax{
+    .col-#{$nameCol}-#{$i}{
+      float: left;
+      width: (100 * $i) / $colMax * 1%;
+    }
+  }
+}
+
+@each $key, $val in map-get($grid, 'breakpoints'){
+  @if ($key == 'default'){
+    $colDefault: map-deep-get($grid, 'breakpoints', default);
+    @include column($colDefault);
+  }
+  @else{
+    @media (min-width: $val * 1px){
+      @include column($key);
+    }
+  }
+}
+
+.pull-left{
+  float: left;
+}
+
+.pull-right{
+  float: right;
+}
