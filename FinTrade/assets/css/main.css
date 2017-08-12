@@ -371,7 +371,7 @@
   font-weight: bold;
   position: relative;
   margin-top: 16px;
-  -webkit-tap-highlight-color: red; }
+  -webkit-tap-highlight-color: rgba(24, 24, 24, 0.2); }
   .home_intro_btn:hover::before {
     display: block; }
   .home_intro_btn::before {
