@@ -1,3 +1,15 @@
+/**
+ * @Author: Yangsou <wladek>
+ * @Date:   2017-08-11T16:50:35+07:00
+ * @Email:  namnguyentrung95@gmail.com
+ * @Project: landingpage
+ * @Last modified by:   wladek
+ * @Last modified time: 2017-08-12T12:35:07+07:00
+ * @License: MIT
+ */
+
+
+
 window.onload = function(){
   init();
 }
@@ -7,28 +19,19 @@ function init(){
   var index = 0;
   var slider = new Slider(document.getElementsByClassName('slider_item'));
   slider.sliderAutomatic();
+  var homeBtn = document.getElementsByClassName('home_intro_btn');
+  for(var i = 0; i < homeBtn.length; i++){
+    console.log(homeBtn[i].classList);
+    homeBtn[i].addEventListener('click', function(){
+      var _this = this;
+      _this.classList.add('active');
+      setTimeout(function(){
+        _this.classList.remove('active');
+      }, 650);
+    })
+  }
 
 }
-
-// function sliderAutomatic(index = 0){
-//   var item = document.getElementsByClassName('slider_item'),
-//       itemLength = item.length;
-//
-//   for(var i = 0; i < itemLength; i++){
-//     // item[i].style.transform = 'translateX('+ i * 100 +'%)';
-//     item[i].style.zIndex = '1';
-//   }
-//   console.log('index', index);
-//   if(index == itemLength){
-//     index = 0;
-//   }
-//   item[index].style.zIndex = 3;
-//   index++;
-//
-//   setTimeout(function(){
-//     sliderAutomatic(index);
-//   }, 2000);
-// }
 
 function Slider(target){
   var $this = this,

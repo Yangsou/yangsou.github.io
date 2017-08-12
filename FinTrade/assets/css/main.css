@@ -275,7 +275,6 @@
   position: relative;
   height: 100vh;
   min-height: 567px;
-  overflow: hidden;
   perspective: 1000px; }
 
 .home_intro_background {
@@ -365,15 +364,25 @@
 .home_intro_btn {
   width: 198px;
   height: 48px;
-  background: #4FD769;
-  color: #fff;
-  font-size: 1.56em;
+  background: transparent;
+  display: inline-block;
+  border-radius: 2px;
+  border: 1px solid #4FD769;
+  color: #4FD769;
   font-weight: bold;
   position: relative;
   margin-top: 16px;
+  text-align: left;
+  padding-left: 48px;
+  line-height: 1;
   -webkit-tap-highlight-color: rgba(24, 24, 24, 0.2); }
-  .home_intro_btn:hover::before {
-    display: block; }
+  .home_intro_btn:hover {
+    border-color: transparent;
+    background: #4FD769;
+    color: #fff;
+    box-shadow: 0 0 4px rgba(79, 215, 105, 0.5); }
+    .home_intro_btn:hover::before {
+      display: block; }
   .home_intro_btn::before {
     content: '';
     position: absolute;
@@ -383,20 +392,241 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(34, 34, 34, 0.2);
+    background-color: rgba(34, 34, 34, 0.1);
     display: none; }
+  .home_intro_btn.active .roam {
+    animation: roaming 650ms ease; }
+  .home_intro_btn .roam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background-color: rgba(24, 24, 24, 0.1); }
+  .home_intro_btn .icon {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 30px;
+    height: 30px; }
+    .home_intro_btn .icon svg {
+      width: 100%;
+      height: 100%; }
+  .home_intro_btn .label-secondary {
+    display: block; }
+  .home_intro_btn .label-primary {
+    font-size: 1.56em;
+    display: block; }
 
 @keyframes roaming {
   from {
-    transform: scale(0) translate(-50%, -50%); }
+    width: 0; }
   to {
-    transform: scale(10) translate(-50%, -50%); } }
+    width: 100%; } }
 .home_title {
   color: #fff;
   width: 50%;
   min-width: 300px;
   letter-spacing: 0.01em;
   line-height: 1.4em; }
+  .home_title.center {
+    text-align: center; }
+  .home_title.fluid {
+    width: 100%;
+    max-width: 100%; }
+
+.section-mini {
+  background-color: #222222;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.section_secondary_text {
+  font-size: 1.05em;
+  color: #fdfdfd;
+  text-align: center;
+  width: 50%;
+  max-width: 768px;
+  min-width: 300px;
+  display: block;
+  margin: 15px auto 0; }
+
+.section {
+  height: 100vh;
+  min-height: 568px;
+  position: relative; }
+
+.section-feature, .section-feature-secondary {
+  background-color: #181818; }
+
+.smart-phone {
+  position: absolute;
+  width: 375px;
+  height: 667px;
+  bottom: -200px;
+  left: 0; }
+
+.smart-phone-white {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../images/iphone-industries.png"); }
+  .smart-phone-white:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 24, 24, 0.2); }
+
+.smart-phone.right {
+  position: absolute;
+  width: 264px;
+  height: 579px;
+  bottom: 0;
+  right: 0;
+  left: auto; }
+  .smart-phone.right .smart-phone_content {
+    top: 86px;
+    left: 18px;
+    width: 230px;
+    height: 409px; }
+
+.smart-phone-black {
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../images/iphone_6.png");
+  position: absolute;
+  width: 375px;
+  height: 667px;
+  bottom: 0;
+  left: 0; }
+
+.smart-phone_content {
+  width: 271px;
+  height: 477px;
+  background: #999;
+  top: 98px;
+  position: absolute;
+  left: 46px;
+  border-radius: 2px;
+  background: #f0f0f0;
+  overflow: hidden; }
+
+.smart-phone_img {
+  width: 100%; }
+
+.section-feature_content {
+  display: table;
+  height: 100%; }
+  .section-feature_content .text {
+    text-align: center;
+    color: #fefefe;
+    display: block;
+    margin: 15px auto;
+    width: 75%;
+    max-width: 500px;
+    min-width: 300px; }
+
+.table-cell {
+  display: table-cell;
+  vertical-align: middle; }
+
+.section-clear-fix_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../images/background-2.jpg");
+  background-attachment: fixed; }
+  .section-clear-fix_background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(69, 72, 77, 0.77);
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(69, 72, 77, 0.9) 0%, rgba(2, 2, 2, 0.9) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(69, 72, 77, 0.9) 0%, rgba(2, 2, 2, 0.9) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(69, 72, 77, 0.9) 0%, rgba(2, 2, 2, 0.9) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */ }
+
+.section-clear-fix_content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  background-color: rgba(34, 34, 34, 0.2); }
+
+.section-feature-secondary {
+  background-color: #181818; }
+
+.section-subcribe {
+  background-color: #222222; }
+
+.section-subcribe_content {
+  margin-left: 12.5%;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .section-subcribe_content hr {
+    border-color: rgba(254, 254, 254, 0.1);
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  .section-subcribe_content p {
+    width: 75%;
+    display: block;
+    margin: auto;
+    max-width: 750px;
+    min-width: 280px;
+    color: #fefefe;
+    text-align: center; }
+
+.subcribe_form {
+  margin-top: 30px;
+  text-align: center; }
+
+.input-default {
+  background: none;
+  border: none;
+  outline-color: transparent; }
+
+.subcribe_form_input {
+  width: 75%;
+  max-width: 500px;
+  min-width: 260px;
+  height: 48px;
+  border-radius: 2px;
+  border: 1px solid rgba(240, 240, 240, 0.58);
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fefefe;
+  font-size: 1.05em;
+  transform: translateY(3px); }
+  .subcribe_form_input:focus {
+    outline-color: #4FD769; }
+
+.subcribe_form_btn {
+  height: 48px;
+  border: 1px solid #4FD769;
+  color: #4FD769;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 2px;
+  text-align: center;
+  width: auto; }
 
 a {
   text-decoration: none; }
