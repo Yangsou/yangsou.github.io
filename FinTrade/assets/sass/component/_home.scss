@@ -3,7 +3,7 @@
 // @Email:  namnguyentrung95@gmail.com
 // @Project: landingpage
 // @Last modified by:   wladek
-// @Last modified time: 2017-08-12T00:53:46+07:00
+// @Last modified time: 2017-08-12T11:36:50+07:00
 // @License: MIT
 
 
@@ -136,7 +136,7 @@ $color-black-thirty: #222222;
   font-weight: bold;
   position: relative;
   margin-top: 16px;
-  -webkit-tap-highlight-color: red;
+  -webkit-tap-highlight-color: rgba($color-black-secondary, .2);
   &:hover{
     &::before{
       display: block;
