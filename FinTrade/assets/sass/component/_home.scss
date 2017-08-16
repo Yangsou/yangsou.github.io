@@ -143,6 +143,7 @@ $color-black-thirty: #222222;
   padding-left: 48px;
   line-height: 1;
   -webkit-tap-highlight-color: rgba($color-black-secondary, .2);
+  overflow: hidden;
   &:hover{
     border-color: transparent;
     background: $color-primary;
@@ -168,12 +169,25 @@ $color-black-thirty: #222222;
   }
   .roam{
     position: absolute;
-    top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 100%;
-    // transition: width 650ms ease-in-out;
+    // top: 0; left: 50%;
+    // transform: translateX(-50%);
+    // width: 0;
+    // height: 100%;
+    width: 20px;
+    height: 20px;
+    // top: 50%;
+    // left: 0;
+    opacity: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events:none;
+    transition-property:transform, opacity;
+    transition-property:transform, opacity, -webkit-transform;
     background-color: rgba($color-black-secondary, .1);
+    &.not-transition{
+      transition: none !important;
+      -webkit-transition: none !important;
+    }
   }
   .icon{
     position: absolute;
