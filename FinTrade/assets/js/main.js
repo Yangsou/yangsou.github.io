@@ -16,52 +16,33 @@ window.onload = function(){
 
 function init(){
   console.log('window init');
+  //active header when loaded
+  activeHeaderWhenScroll();
+
+  // slider initial
   var index = 0;
   var slider = new Slider(document.getElementsByClassName('slider_item'));
   slider.sliderAutomatic();
-  var homeBtn = document.getElementsByClassName('home_intro_btn');
 
+  // controll effect btn
+  var homeBtn = document.getElementsByClassName('home_intro_btn');
   window.addEventListener('mousedown', showEffect, false);
 
-  // for(var i = 0; i < homeBtn.length; i++){
-  //   homeBtn[i].addEventListener('click', function(e){
-  //     var _this = this;
-  //     var offsetX = e.offsetX,
-  //         offsetY = e.offsetY,
-  //         scale = 'scale(' + _this.clientWidth / 10 + ')';
-  //     console.log('offsetX', offsetX, offsetY);
-  //     var ripple = document.createElement('div');
-  //     ripple.classList.add('roam');
-  //     _this.appendChild(ripple);
-  //     rippleStyle = {
-  //       top: offsetY + 'px',
-  //       left: offsetX + 'px'
-  //     }
-  //     // ripple.classList.add('not-transition');
-  //     ripple.setAttribute('style', convertStyle(rippleStyle));
-  //     // ripple.classList.remove('not-transition');
-  //
-  //     rippleStyle['-webkit-transition-duration'] = '650ms';
-  //     rippleStyle['-moz-transition-duration'] = '650ms';
-  //     rippleStyle['-o-transition-duration'] = '650ms';
-  //     rippleStyle['transition-duration'] = '650ms';
-  //     rippleStyle['-webkit-transition-timing-function'] = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-  //     setTimeout(function(){
-  //       rippleStyle.transform = scale;
-  //       rippleStyle.opacity = '1';
-  //       ripple.setAttribute('style', convertStyle(rippleStyle));
-  //     }, 0);
-  //     setTimeout(function(){
-  //       _this.removeChild(ripple);
-  //     }, 650);
-  //     // ripple.style.transform = scale;
-  //     // _this.classList.add('active');
-  //     // setTimeout(function(){
-  //     //   _this.classList.remove('active');
-  //     // }, 650);
-  //   })
-  // }
+  window.addEventListener('scroll', function(){
+    activeHeaderWhenScroll();
+  });
+}
 
+// active or unactive header when scroll
+function activeHeaderWhenScroll(){
+  var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  var header = document.getElementsByClassName('header')[0];
+  // console.log('scrollTop', scrollTop);
+  if(scrollTop > 196){
+    header.classList.add('active');
+  }else{
+    header.classList.remove('active');
+  }
 }
 
 function showEffect(e){
@@ -92,7 +73,7 @@ function getLazyEffectElement(e) {
 }
 
 var LazyEffect = {
-  duration: 800,
+  duration: 770,
   timingFunction: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
 
   show: function(e, element){
@@ -101,8 +82,11 @@ var LazyEffect = {
       y: e.pageY
     };
     var elementPosition = element.getBoundingClientRect();
-    var relativeX = eventPosition.x - elementPosition.left;
-    var relativeY = eventPosition.y - elementPosition.top;
+    // var relativeX = eventPosition.x - elementPosition.left;
+    // var relativeY = eventPosition.y - elementPosition.top;
+    var relativeX = eventPosition.x - element.offsetLeft;
+    var relativeY = eventPosition.y - element.offsetTop;
+    console.log('elementPosition', element.offsetTop, eventPosition.y);
     var scale = 'scale(' + element.clientWidth / 100 * 20 + ')';
 
     var ripple = document.createElement('div');
@@ -226,3 +210,5 @@ function Slider(target){
   }
 
 }
+
+//

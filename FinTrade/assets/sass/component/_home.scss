@@ -460,3 +460,18 @@ $color-black-thirty: #222222;
   // font-size: 1.05em;
   width: auto;
 }
+
+.lazy-effect{
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  &:focus{
+    outline: none;
+    // border: none;
+  }
+  .lazy-ripple{
+    z-index: 2;
+  }
+}

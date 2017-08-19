@@ -15,6 +15,18 @@ a{
 .header{
   z-index: 99;
   // height: 80px;
+  transition: all 500ms ease-in-out;
+  &.active{
+    background: $color-black-primary;
+    .header_brand{
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .header_right{
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+  }
 }
 
 .header-fixed{
@@ -27,6 +39,7 @@ a{
 .header_brand{
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: all 500ms ease-in-out;
 }
 .brand{
   font-family: textBold;
@@ -35,6 +48,7 @@ a{
 }
 
 .header_right{
+  transition: all 500ms ease-in-out;
   padding-top: 30px;
   padding-bottom: 30px;
 }

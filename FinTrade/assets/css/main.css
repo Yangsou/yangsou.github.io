@@ -249,10 +249,10 @@
 
 @font-face {
   font-family: text;
-  src: url("../fonts/Mark-Simonson-Proxima-Nova-Thin_0.otf"); }
+  src: url("../fonts/Mark-Simonson-Proxima-Nova-Alt-Light_0.otf"); }
 @font-face {
   font-family: textItalic;
-  src: url("../fonts/Mark-Simonson-Proxima-Nova-ScOsf-Thin-Italic_0.otf"); }
+  src: url("../fonts/Mark-Simonson-Proxima-Nova Alt-Condensed-Light-Italic_0.otf"); }
 @font-face {
   font-family: textBold;
   src: url("../fonts/Mark-Simonson-Proxima-Nova-Bold_0.otf"); }
@@ -635,11 +635,31 @@
   text-align: center;
   width: auto; }
 
+.lazy-effect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none; }
+  .lazy-effect:focus {
+    outline: none; }
+  .lazy-effect .lazy-ripple {
+    z-index: 2; }
+
 a {
   text-decoration: none; }
 
 .header {
-  z-index: 99; }
+  z-index: 99;
+  transition: all 500ms ease-in-out; }
+  .header.active {
+    background: #020202; }
+    .header.active .header_brand {
+      padding-top: 12px;
+      padding-bottom: 12px; }
+    .header.active .header_right {
+      padding-top: 18px;
+      padding-bottom: 18px; }
 
 .header-fixed {
   position: fixed;
@@ -649,7 +669,8 @@ a {
 
 .header_brand {
   padding-top: 24px;
-  padding-bottom: 24px; }
+  padding-bottom: 24px;
+  transition: all 500ms ease-in-out; }
 
 .brand {
   font-family: textBold;
@@ -657,6 +678,7 @@ a {
   color: #fff; }
 
 .header_right {
+  transition: all 500ms ease-in-out;
   padding-top: 30px;
   padding-bottom: 30px; }
 
