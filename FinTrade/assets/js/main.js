@@ -92,7 +92,7 @@ function getLazyEffectElement(e) {
 }
 
 var LazyEffect = {
-  duration: 750,
+  duration: 800,
   timingFunction: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
 
   show: function(e, element){
