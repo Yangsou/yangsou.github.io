@@ -151,7 +151,7 @@ var LazyEffect = {
     var relativeY = ripple.getAttribute('data-y');
     var scale = ripple.getAttribute('data-scale');
     let diff = Date.now() - Number(ripple.getAttribute('data-hold'));
-    var delay = 450 - diff;
+    var delay = 350 - diff;
     if(delay < 0){
       delay = 0;
     }
