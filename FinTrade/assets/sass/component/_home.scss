@@ -260,9 +260,9 @@ $color-black-thirty: #222222;
 
 // section - 3
 .section{
-  height: 100vh;
-  min-height: 568px;
-  position: relative;
+  // height: 100vh;
+  // min-height: 568px;
+  // position: relative;
 }
 .section-feature{
   background-color: $color-black-secondary;
@@ -430,7 +430,7 @@ $color-black-thirty: #222222;
 .section-choose{
   background: $color-black-secondary;
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 120px;
   .text{
     text-align: center;
     color: #fafafa;
