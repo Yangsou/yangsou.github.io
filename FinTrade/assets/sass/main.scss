@@ -1,9 +1,12 @@
+@charset "utf-8";
 @import "component/grid";
 
 @font-face {
   font-family: text;
-  // src: url('../fonts/Mark-Simonson-Proxima-Nova-Thin_0.otf');
-  src: url('../fonts/Mark-Simonson-Proxima-Nova-Alt-Light_0.otf');
+  src: url('../fonts/Mark-Simonson-Proxima-Nova-Thin_0.otf');
+  // src: url('../fonts/Mark-Simonson-Proxima-Nova-Alt-Light_0.otf');
+  // src: url('../fonts/Mar-Simonson-Proxima-Nova-Alt-Thin_0.otf');
+
 }
 @font-face {
   font-family: textItalic;
@@ -24,5 +27,6 @@
   box-sizing: border-box;
   font-family: text;
 }
+
 @import "component/home";
 @import "component/header";
