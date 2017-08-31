@@ -671,10 +671,10 @@
   background-color: rgba(34, 34, 34, 0.2); }
 
 .section-subcribe {
-  background-color: #222222; }
+  background-color: #181818; }
 
 .section-subcribe_content {
-  margin-left: 12.5%;
+  margin-left: calc(100% / 12 * 2);
   padding-top: 60px;
   padding-bottom: 60px; }
   .section-subcribe_content hr {
@@ -733,7 +733,24 @@
   .lazy-effect:focus {
     outline: none; }
   .lazy-effect .lazy-ripple {
-    z-index: 2; }
+    z-index: 2;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(254, 254, 254, 0.255); }
+
+.screen_title {
+  text-align: center;
+  margin-bottom: 30px; }
+  .screen_title .home_title {
+    margin: 15px 0; }
+  .screen_title .text {
+    color: white;
+    min-width: 280px;
+    max-width: 568px;
+    display: block;
+    margin: auto; }
 
 a {
   text-decoration: none; }
@@ -780,5 +797,98 @@ a {
     font-family: textBold; }
     .header_right_item a:hover {
       color: #fff; }
+
+.section-sreenshoot {
+  background-color: #222222;
+  padding-top: 90px;
+  padding-bottom: 90px; }
+
+.slide-screen {
+  text-align: center;
+  perspective: 1000px;
+  position: relative; }
+
+.screen_body {
+  background-image: url(../images/iphone-industries.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: relative;
+  width: 300px;
+  height: 540px;
+  margin: auto;
+  perspective: 1000px; }
+
+.screen_item {
+  position: absolute;
+  top: 84px;
+  left: 39px;
+  width: 213px;
+  height: 378px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 1000ms ease;
+  animation: fadeIn 500ms ease;
+  opacity: 0;
+  z-index: 1; }
+  .screen_item-first {
+    transform-origin: left;
+    display: block;
+    transform: rotateY(-49deg) translate3d(-426px, 0px, 90px);
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    opacity: 1; }
+  .screen_item-second {
+    transform-origin: left;
+    display: block;
+    transform: rotateY(-31deg) translate3d(-213px, 0, 30px);
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    opacity: 1; }
+  .screen_item-third {
+    display: block;
+    z-index: 4;
+    opacity: 1; }
+  .screen_item-fourth {
+    transform-origin: right;
+    display: block;
+    transform: rotateY(31deg) translate3d(213px, 0, 30px);
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    opacity: 1; }
+  .screen_item-fifth {
+    transform-origin: right;
+    display: block;
+    transform: rotateY(49deg) translate3d(426px, 0px, 90px);
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    opacity: 1; }
+  .screen_item img {
+    width: 100%;
+    position: relative; }
+
+@keyframes fadeIn {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+.screen_btn {
+  background-image: url(../images/right-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+  text-indent: -9999px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; }
+  .screen_btn:hover {
+    background-color: #181818; }
+  .screen_btn-prev {
+    transform: rotate(180deg); }
+
+.screen_group-btn {
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

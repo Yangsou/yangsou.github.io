@@ -4,7 +4,7 @@
  * @Email:  namnguyentrung95@gmail.com
  * @Project: landingpage
  * @Last modified by:   wladek
- * @Last modified time: 2017-08-12T12:35:07+07:00
+ * @Last modified time: 2017-08-30T01:25:46+07:00
  * @License: MIT
  */
 
@@ -27,6 +27,10 @@ function init(){
   // controll effect btn
   var homeBtn = document.getElementsByClassName('home_intro_btn');
   window.addEventListener('mousedown', showEffect, false);
+
+  // control slider screen shot
+  var slider3D = new Slider3D(document.getElementsByClassName('screen_item'));
+  slider3D.sliderScreen();
 
   window.addEventListener('scroll', function(){
     activeHeaderWhenScroll();
@@ -81,12 +85,9 @@ var LazyEffect = {
       x: e.pageX,
       y: e.pageY
     };
-    var elementPosition = element.getBoundingClientRect();
-    // var relativeX = eventPosition.x - elementPosition.left;
-    // var relativeY = eventPosition.y - elementPosition.top;
     var relativeX = eventPosition.x - element.offsetLeft;
     var relativeY = eventPosition.y - element.offsetTop;
-    console.log('elementPosition', element.offsetTop, eventPosition.y);
+    // console.log('elementPosition', element.offsetTop, eventPosition.y);
     var scale = 'scale(' + element.clientWidth / 100 * 20 + ')';
 
     var ripple = document.createElement('div');
@@ -99,7 +100,6 @@ var LazyEffect = {
       width: '20px',
       height: '20px',
       'border-radius': '50%',
-      'background-color': 'rgba(22,22,22,.22)',
       opacity: '0',
       'transition-property': 'transform, opacity, -webkit-transform'
     };
@@ -212,3 +212,55 @@ function Slider(target){
 }
 
 //
+// slider screen shot
+// var Slider3D  = {
+//   index = 0,
+//
+// }
+function Slider3D(target){
+  var $this = this,
+      items = target,
+      itemsLength = items.length;
+
+  this.index = 0;
+
+  var btnNext = document.getElementsByClassName('screen_btn-next')[0];
+  var btnPrev = document.getElementsByClassName('screen_btn-prev')[0];
+
+  btnNext.addEventListener('click', function(){
+    $this.index++;
+    if($this.index == itemsLength - 2){
+      $this.index = itemsLength - 3;
+    }
+    console.log('index', $this.index);
+    $this.sliderScreen($this.index);
+  });
+  btnPrev.addEventListener('click', function(){
+    $this.index--;
+    if($this.index < 0){
+      $this.index = 0;
+    }
+    console.log('index', $this.index);
+    $this.sliderScreen($this.index);
+  })
+
+  this.sliderScreen = function(index = 0){
+    var itemShowCount = 5;
+    for (var i = 0; i < items.length; i++) {
+      items[i].setAttribute('class', 'screen_item');
+    }
+    console.log('idex', index, itemsLength);
+    items[index].classList.add('screen_item-first');
+    items[index+1].classList.add('screen_item-second');
+    items[index+2].classList.add('screen_item-third');
+    if(items[index+3]){
+      items[index+3].classList.add('screen_item-fourth');
+    }
+    if(items[index+4]){
+      items[index+4].classList.add('screen_item-fifth');
+    }
+    // setTimeout(function(){
+    //   $this.sliderScreen(index);
+    // }, 2000);
+  }
+}

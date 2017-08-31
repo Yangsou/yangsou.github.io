@@ -11,6 +11,7 @@ $color-primary: #4FD769;
 $color-black-primary: #020202;
 $color-black-secondary: #181818;
 $color-black-thirty: #222222;
+$color-white: #fefefe;
 
 .relative{
   position: relative;
@@ -521,11 +522,11 @@ $color-black-thirty: #222222;
 }
 
 .section-subcribe{
-  background-color: $color-black-thirty;
+  background-color: $color-black-secondary;
 }
 
 .section-subcribe_content{
-  margin-left: 12.5%;
+  margin-left: calc(100% / 12 * 2);
   padding-top: 60px;
   padding-bottom: 60px;
   hr{
@@ -598,5 +599,26 @@ $color-black-thirty: #222222;
   }
   .lazy-ripple{
     z-index: 2;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba($color-white, .255);
+  }
+}
+
+// screen shoot
+.screen_title{
+  text-align: center;
+  margin-bottom: 30px;
+  .home_title{
+    margin: 15px 0;
+  }
+  .text{
+    color: white;
+    min-width: 280px;
+    max-width: 568px;
+    display: block;
+    margin: auto;
   }
 }
