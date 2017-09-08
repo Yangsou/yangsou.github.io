@@ -3,7 +3,7 @@
 // @Email:  namnguyentrung95@gmail.com
 // @Project: landingpage
 // @Last modified by:   wladek
-// @Last modified time: 2017-08-30T01:43:52+07:00
+// @Last modified time: 2017-09-08T23:58:35+07:00
 // @License: MIT
 
 $color-primary: #4FD769;
@@ -44,12 +44,17 @@ $color-white: #fefefe;
   background-position: center;
   background-size: 100%;
   position: relative;
-  // width: 375px;
-  // height: 667px;
   width: 300px;
   height: 540px;
   margin: auto;
   perspective: 1000px;
+  transform: scale(.6667);
+  @media (min-width: 768px){
+    transform: scale(.8889);
+  }
+  @media (min-width: 992px){
+    transform: scale(1);
+  }
 }
 
 

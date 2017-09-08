@@ -3,7 +3,7 @@
 // @Email:  namnguyentrung95@gmail.com
 // @Project: landingpage
 // @Last modified by:   wladek
-// @Last modified time: 2017-09-08T18:35:56+07:00
+// @Last modified time: 2017-09-08T23:51:32+07:00
 // @License: MIT
 
 
@@ -23,12 +23,19 @@ $color-white: #fefefe;
 .img-responsive{
   max-width: 100%;
 }
+
+.hidden-xs{
+  @media (max-width: 767px){
+    display: none;
+  }
+}
+
 //
 .home_intro{
   position: relative;
   height: 100vh;
   min-height: 567px;
-  // overflow: hidden;
+  max-height: 1200px;
   perspective: 1000px;
 }
 
@@ -69,16 +76,34 @@ $color-white: #fefefe;
   bottom: 0;
   width: 375px;
   height: 667px;
-  @media (max-width: 767px){
+  @media (max-width: 767px) and (orientation:portrait){
     transform: translateX(0) translateY(-25%) scale(1);
     left: 386px;
     right: auto;
   }
-  @media (max-width: 597px){
-    transform: translateX(0) translateY(5%) scale(1);
-    left: 200px;
+  @media (max-width: 767px) and (orientation:landscape){
+    transform: translateX(0) translateY(-15%) scale(.51);
+    left: 386px;
+    right: auto;
   }
-  transform: rotateX(19deg) rotateY(-21deg) rotateZ(-22deg);
+  @media (max-width: 597px){
+    transform: translateX(0) translateY(-5%) scale(.51);
+    left: 110px;
+  }
+  @media (max-width: 597px) and (orientation:landscape){
+    transform: translateX(0) translateY(-15%) scale(.51);
+    left: 210px;
+  }
+  @media (min-width: 768px){
+    transform: translateY(-25%);
+  }
+  @media (min-width: 992px){
+    transform: rotateX(19deg) rotateY(-21deg) rotateZ(-22deg);
+  }
+  @media (min-width: 1921px){
+    right: 25%;
+    bottom: 25%;
+  }
   transform-origin: bottom;
   transform-style: preserve-3d;
 }
@@ -371,6 +396,13 @@ $color-white: #fefefe;
   &_content{
     height: 100%;
     text-align: center;
+    // width: 100%;
+    max-width: 300px;
+    margin: auto;
+    @media (min-width: 768px){
+      float: right;
+      max-width: inherit;
+    }
   }
   .section{
     overflow: hidden;
@@ -382,20 +414,14 @@ $color-white: #fefefe;
   }
 }
 
-.table-cell{
-  // display: table-cell;
-  // vertical-align: middle;
-}
-
 .feature_item{
-  @extend .col-md-6;
-  float: left;
-  width: calc(50% - 30px);
   padding: 30px;
   margin-bottom: 30px;
   background: $color-black-thirty;
   transition: all 550ms ease-out;
   text-align: center;
+  display: block;
+  margin: 15px auto;
   &:hover{
     background: rgba($color-primary, .5);
     .feature_item_icon{
@@ -404,7 +430,20 @@ $color-white: #fefefe;
     }
   }
   &:nth-child(even){
-    margin-left: 30px;
+    // margin-left: 30px;
+  }
+  @media (min-width: 768px){
+    float: right;
+    clear: both;
+    width: calc(50% - 30px);
+    // max-width: auto;
+    &:nth-child(even){
+      margin-left: 30px;
+    }
+  }
+  @media (min-width: 992px){
+    float: left;
+    clear: inherit;
   }
   &_title{
     margin-top: 15px;
