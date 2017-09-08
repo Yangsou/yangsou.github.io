@@ -4,7 +4,7 @@
  * @Email:  namnguyentrung95@gmail.com
  * @Project: landingpage
  * @Last modified by:   wladek
- * @Last modified time: 2017-08-30T01:25:46+07:00
+ * @Last modified time: 2017-09-08T18:30:42+07:00
  * @License: MIT
  */
 
@@ -34,6 +34,13 @@ function init(){
 
   window.addEventListener('scroll', function(){
     activeHeaderWhenScroll();
+  });
+
+  // handle click open or close right menu at mobile
+  var btnRightMenuHeader = document.getElementsByClassName('header_toggle-menu')[0];
+  var rightMenuHeader = document.getElementsByClassName('header_right')[0];
+  window.addEventListener('click', function(e){
+    toggleRightMenu(e, btnRightMenuHeader, rightMenuHeader);
   });
 }
 
@@ -237,8 +244,8 @@ function Slider3D(target){
   });
   btnPrev.addEventListener('click', function(){
     $this.index--;
-    if($this.index < 0){
-      $this.index = 0;
+    if($this.index < -2){
+      $this.index = -2;
     }
     console.log('index', $this.index);
     $this.sliderScreen($this.index);
@@ -250,8 +257,12 @@ function Slider3D(target){
       items[i].setAttribute('class', 'screen_item');
     }
     console.log('idex', index, itemsLength);
-    items[index].classList.add('screen_item-first');
-    items[index+1].classList.add('screen_item-second');
+    if(items[index]){
+      items[index].classList.add('screen_item-first');
+    }
+    if(items[index+1]){
+      items[index+1].classList.add('screen_item-second');
+    }
     items[index+2].classList.add('screen_item-third');
     if(items[index+3]){
       items[index+3].classList.add('screen_item-fourth');
@@ -262,5 +273,31 @@ function Slider3D(target){
     // setTimeout(function(){
     //   $this.sliderScreen(index);
     // }, 2000);
+  }
+}
+
+
+// control click on button to toggling, and outside button to unactive
+function toggleRightMenu(event, element, secondElement){
+  // console.log('click', element);
+  var _main = document.getElementsByTagName('main')[0];
+  var _body = document.getElementsByTagName('body')[0];
+  var _header = document.getElementsByClassName('header')[0];
+
+  if(element.contains(event.target)){
+    element.classList.toggle("active");
+    secondElement.classList.toggle('active');
+    _main.classList.toggle('show-right-menu');
+    _body.classList.toggle('show-right-menu');
+    _header.classList.toggle('show-right-menu');
+  }else{
+    // console.log('click outside');
+    if(element.classList.contains('active')){
+      element.classList.remove('active');
+      secondElement.classList.remove('active');
+      _main.classList.remove('show-right-menu');
+      _body.classList.remove('show-right-menu');
+      _header.classList.remove('show-right-menu');
+    }
   }
 }
