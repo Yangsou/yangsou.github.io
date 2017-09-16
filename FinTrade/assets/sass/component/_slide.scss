@@ -6,11 +6,11 @@
 // @Last modified time: 2017-09-09T15:18:03+07:00
 // @License: MIT
 
-$color-primary: #4FD769;
-$color-black-primary: #020202;
-$color-black-secondary: #181818;
-$color-black-thirty: #222222;
-$color-white: #fefefe;
+// $color-primary: #4FD769;
+// $color-black-primary: #020202;
+// $color-black-secondary: #181818;
+// $color-black-thirty: #222222;
+// $color-white: #fefefe;
 
 .section-sreenshoot{
   background-color: $color-black-thirty;
@@ -50,7 +50,7 @@ $color-white: #fefefe;
   perspective: 1000px;
   transform: scale(.6667);
   @media (min-width: 768px){
-    // transform: scale(.8889);
+    transform: scale(.8889);
   }
   @media (min-width: 992px){
     transform: scale(1);

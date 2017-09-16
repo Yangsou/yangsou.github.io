@@ -37,7 +37,8 @@
   box-sizing: border-box;
   font-family: text;
 }
-
+@import "base/defined";
 @import "component/home";
 @import "component/header";
 @import "component/slide";
+@import "component/footer";

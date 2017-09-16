@@ -1,0 +1,9 @@
+.footer{
+  background-color: $color-black-primary;
+  &_body-center{
+    text-align: center;
+    color: rgba($color-white, .55);
+    font-size: 0.89em;
+    padding: 8px 0;
+  }
+}
