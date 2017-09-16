@@ -3,7 +3,7 @@
 // @Email:  namnguyentrung95@gmail.com
 // @Project: landingpage
 // @Last modified by:   wladek
-// @Last modified time: 2017-09-08T23:58:35+07:00
+// @Last modified time: 2017-09-09T15:18:03+07:00
 // @License: MIT
 
 $color-primary: #4FD769;
@@ -48,9 +48,9 @@ $color-white: #fefefe;
   height: 540px;
   margin: auto;
   perspective: 1000px;
-  transform: scale(.6667);
+  // transform: scale(.6667);
   @media (min-width: 768px){
-    transform: scale(.8889);
+    // transform: scale(.8889);
   }
   @media (min-width: 992px){
     transform: scale(1);
@@ -141,4 +141,11 @@ $color-white: #fefefe;
 
 .screen_group-btn{
   text-align: center;
+  margin-top: -90px;
+  @media (min-width: 768px){
+    margin-top: -60px;
+  }
+  @media (min-width: 768px){
+    margin-top: 0px;
+  }
 }

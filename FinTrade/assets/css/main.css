@@ -520,14 +520,25 @@
     height: 100%;
     background: rgba(24, 24, 24, 0.2); }
 
+@media (min-width: 768px) {
+  .choose_phone {
+    float: right; } }
+
 .smart-phone.right {
-  position: absolute;
   width: 264px;
   height: 579px;
-  top: 30px;
-  right: 50%;
-  transform: translateX(50%);
-  left: auto; }
+  position: relative;
+  margin: auto;
+  transform: scale(0.75); }
+  @media (max-width: 767px) and (orientation: landscape) {
+    .smart-phone.right {
+      float: right; } }
+  @media (min-width: 768px) {
+    .smart-phone.right {
+      position: absolute;
+      top: 30px;
+      transform: translateX(-16px) translateY(50%);
+      left: 0; } }
   .smart-phone.right .smart-phone_content {
     top: 86px;
     left: 18px;
@@ -639,14 +650,22 @@
     text-align: center;
     color: #fafafa; }
   .section-choose_content {
-    margin-top: 30px; }
+    margin-top: -60px; }
+    @media (max-width: 767px) and (orientation: landscape) {
+      .section-choose_content {
+        margin-top: 30px; } }
+    @media (min-width: 768px) {
+      .section-choose_content {
+        margin-top: 30px; } }
 
 .section-choose_item {
-  padding: 30px 0 30px 120px;
   text-align: left;
-  width: 75%;
   margin: auto;
-  position: relative; }
+  position: relative;
+  padding: 30px 0 30px 120px; }
+  @media (min-width: 768px) {
+    .section-choose_item {
+      width: 75%; } }
   .section-choose_item:last-child::before {
     display: none; }
   .section-choose_item::before {
@@ -723,7 +742,6 @@
   background-color: #181818; }
 
 .section-subcribe_content {
-  margin-left: calc(100% / 12 * 2);
   padding-top: 60px;
   padding-bottom: 60px; }
   .section-subcribe_content hr {
@@ -961,11 +979,7 @@ main.show-right-menu {
   width: 300px;
   height: 540px;
   margin: auto;
-  perspective: 1000px;
-  transform: scale(0.6667); }
-  @media (min-width: 768px) {
-    .screen_body {
-      transform: scale(0.8889); } }
+  perspective: 1000px; }
   @media (min-width: 992px) {
     .screen_body {
       transform: scale(1); } }
@@ -1040,6 +1054,13 @@ main.show-right-menu {
     transform: rotate(180deg); }
 
 .screen_group-btn {
-  text-align: center; }
+  text-align: center;
+  margin-top: -90px; }
+  @media (min-width: 768px) {
+    .screen_group-btn {
+      margin-top: -60px; } }
+  @media (min-width: 768px) {
+    .screen_group-btn {
+      margin-top: 0px; } }
 
 /*# sourceMappingURL=main.css.map */
