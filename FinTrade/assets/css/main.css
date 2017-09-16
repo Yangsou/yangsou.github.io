@@ -979,7 +979,8 @@ main.show-right-menu {
   width: 300px;
   height: 540px;
   margin: auto;
-  perspective: 1000px; }
+  perspective: 1000px;
+  transform: scale(0.6667); }
   @media (min-width: 992px) {
     .screen_body {
       transform: scale(1); } }
