@@ -21,16 +21,27 @@ function init(){
 
   // slider initial
   var index = 0;
-  var slider = new Slider(document.getElementsByClassName('slider_item'));
-  slider.sliderAutomatic();
+  var homeSliderItems = document.getElementsByClassName('slider_item');
+  Slider.sliderAutomatic(homeSliderItems, index);
 
   // controll effect btn
   var homeBtn = document.getElementsByClassName('home_intro_btn');
   window.addEventListener('mousedown', showEffect, false);
 
   // control slider screen shot
-  var slider3D = new Slider3D(document.getElementsByClassName('screen_item'));
-  slider3D.sliderScreen();
+  // var slider3D = new Slider3D(document.getElementsByClassName('screen_item'));
+  // slider3D.sliderScreen();
+  var slider3dItems = document.getElementsByClassName('screen_item');
+  var btnNext = document.getElementsByClassName('screen_btn-next')[0];
+  var btnPrev = document.getElementsByClassName('screen_btn-prev')[0];
+
+  btnNext.addEventListener('click', function(){
+    Slider3D.handleNext(slider3dItems);
+  });
+  btnPrev.addEventListener('click', function(){
+    Slider3D.handlePrev(slider3dItems);
+  });
+
 
   window.addEventListener('scroll', function(){
     activeHeaderWhenScroll();
@@ -130,7 +141,7 @@ var LazyEffect = {
   },
   hide: function(){
     // console.log('hide', Date.now());
-    let element = this;
+    // let element = this;
     var ripple = null;
     var ripples = document.getElementsByClassName('lazy-ripple');
     if(ripples.length > 0){
@@ -141,7 +152,7 @@ var LazyEffect = {
     var relativeX = ripple.getAttribute('data-x');
     var relativeY = ripple.getAttribute('data-y');
     var scale = ripple.getAttribute('data-scale');
-    let diff = Date.now() - Number(ripple.getAttribute('data-hold'));
+    var diff = Date.now() - Number(ripple.getAttribute('data-hold'));
     var delay = 350 - diff;
     if(delay < 0){
       delay = 0;
@@ -186,13 +197,13 @@ function convertStyle(obj) {
     return style;
 }
 
-function Slider(target){
-  var $this = this,
-      items = target,
-      itemsLength = items.length;
+var Slider = {
+  index: 0,
 
-  this.sliderAutomatic = function(index = 0){
-    var prev = index - 1;
+  sliderAutomatic: function(items){
+    var itemsLength = items.length;
+    var prev = Slider.index - 1;
+    // console.log('index', prev);
     if(prev < 0){
       prev = itemsLength - 1;
     }
@@ -201,58 +212,46 @@ function Slider(target){
       items[i].classList.remove('prev');
       items[i].classList.remove('active');
     }
-    if(index == itemsLength){
-      index = 0;
+    if(Slider.index == itemsLength){
+      Slider.index = 0;
       prev = itemsLength - 1;
     }
     items[prev].style.zIndex = 2;
     items[prev].classList.add('prev');
-    items[index].style.zIndex = 3;
-    items[index].classList.add('active');
-    index++;
+    items[Slider.index].style.zIndex = 3;
+    items[Slider.index].classList.add('active');
+    Slider.index++;
 
     setTimeout(function(){
-      $this.sliderAutomatic(index);
+      Slider.sliderAutomatic(items);
     }, 5000);
   }
-
 }
 
-//
-// slider screen shot
-// var Slider3D  = {
-//   index = 0,
-//
-// }
-function Slider3D(target){
-  var $this = this,
-      items = target,
-      itemsLength = items.length;
-
-  this.index = 0;
-
-  var btnNext = document.getElementsByClassName('screen_btn-next')[0];
-  var btnPrev = document.getElementsByClassName('screen_btn-prev')[0];
-
-  btnNext.addEventListener('click', function(){
-    $this.index++;
-    if($this.index == itemsLength - 2){
-      $this.index = itemsLength - 3;
+var Slider3D = {
+  index: 0,
+  handleNext: function(items){
+    var itemsLength = items.length;
+    Slider3D.index++;
+    if(Slider3D.index == itemsLength - 2){
+      Slider3D.index = itemsLength - 3;
     }
-    console.log('index', $this.index);
-    $this.sliderScreen($this.index);
-  });
-  btnPrev.addEventListener('click', function(){
-    $this.index--;
-    if($this.index < -2){
-      $this.index = -2;
-    }
-    console.log('index', $this.index);
-    $this.sliderScreen($this.index);
-  })
+    // console.log('index', $this.index);
+    Slider3D.sliderScreen(items);
+  },
 
-  this.sliderScreen = function(index = 0){
+  handlePrev: function(items){
+    Slider3D.index--;
+    if(Slider3D.index < -2){
+      Slider3D.index = -2;
+    }
+    Slider3D.sliderScreen(items);
+  },
+
+  sliderScreen: function(items){
     var itemShowCount = 5;
+    var itemsLength = items.length;
+    var index = Slider3D.index;
     for (var i = 0; i < items.length; i++) {
       items[i].setAttribute('class', 'screen_item');
     }
