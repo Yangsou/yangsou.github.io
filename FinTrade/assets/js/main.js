@@ -53,6 +53,8 @@ function init(){
   window.addEventListener('click', function(e){
     toggleRightMenu(e, btnRightMenuHeader, rightMenuHeader);
   });
+  lazyLoad();
+  window.addEventListener('scroll', lazyLoad, false);
 }
 
 // active or unactive header when scroll
@@ -298,5 +300,22 @@ function toggleRightMenu(event, element, secondElement){
       _body.classList.remove('show-right-menu');
       _header.classList.remove('show-right-menu');
     }
+  }
+}
+
+
+// lazy load when scroll
+function lazyLoad(){
+  var element = document.getElementsByClassName('lazy-load');
+
+  for (let i = 0; i < element.length; i++){
+    var elementPosition = element[i].getBoundingClientRect();
+    console.log(elementPosition.y + element[i].clientHeight, window.innerHeight);
+    if(elementPosition.y < window.innerHeight / 1.5
+      && elementPosition.y + element[i].clientHeight >= window.innerHeight / 2
+    ){
+      element[i].classList.add('active');
+    }
+
   }
 }

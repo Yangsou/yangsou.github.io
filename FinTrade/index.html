@@ -95,7 +95,7 @@
   <!-- section 3 -->
   <section class="section section-feature">
     <div class="section container relative">
-      <div class="smart-phone smart-phone-white hidden-xs">
+      <div class="smart-phone smart-phone-white hidden-xs feature_phone lazy-load">
         <div class="smart-phone_content">
           <img src="assets/images/6.jpg" alt="" class="img-responsive smart-phone_img"/>
         </div>
@@ -104,25 +104,27 @@
         <div class="">
           <h1 class="home_title fluid">Chức năng tiêu biểu</h1>
           <p class="home_title-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-          <div class="feature_item">
-            <span class="feature_item_icon feature_item_icon-time"></span>
-            <h3 class="feature_item_title">Dữ liệu REALTIME.</h3>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="feature_item">
-            <span class="feature_item_icon feature_item_icon-presentation"></span>
-            <h3 class="feature_item_title">Thống kê đa chiều.</h3>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="feature_item">
-            <span class="feature_item_icon feature_item_icon-network"></span>
-            <h3 class="feature_item_title">Mạng xã hội chứng khoán.</h3>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="feature_item">
-            <span class="feature_item_icon feature_item_icon-warning"></span>
-            <h3 class="feature_item_title">Cảnh báo</h3>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="lazy-load" style="overflow-y: hidden">
+            <div class="feature_item to-right">
+              <span class="feature_item_icon feature_item_icon-time"></span>
+              <h3 class="feature_item_title">Dữ liệu REALTIME.</h3>
+              <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="feature_item to-left">
+              <span class="feature_item_icon feature_item_icon-presentation"></span>
+              <h3 class="feature_item_title">Thống kê đa chiều.</h3>
+              <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="feature_item to-right">
+              <span class="feature_item_icon feature_item_icon-network"></span>
+              <h3 class="feature_item_title">Mạng xã hội chứng khoán.</h3>
+              <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="feature_item to-left">
+              <span class="feature_item_icon feature_item_icon-warning"></span>
+              <h3 class="feature_item_title">Cảnh báo</h3>
+              <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -142,30 +144,36 @@
       <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="row">
         <div class="relative col-sm-4 choose_phone">
-          <div class="smart-phone smart-phone-black right">
+          <div class="smart-phone smart-phone-black right lazy-load">
             <div class="smart-phone_content">
               <img src="assets/images/10.jpg" alt="" class="img-responsive smart-phone_img"/>
             </div>
           </div>
         </div>
-        <div class="section-choose_content col-sm-8">
+        <div class="section-choose_content col-sm-8 lazy-load">
           <!-- one item -->
           <div class="section-choose_item">
             <div class="section-choose_item_icon"></div>
-            <h2 class="section-choose_item_title">đa nền tảng</h2>
-            <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="choose_item_content">
+              <h2 class="section-choose_item_title">đa nền tảng</h2>
+              <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
           </div>
           <!-- one item -->
           <div class="section-choose_item">
             <div class="section-choose_item_icon"></div>
-            <h2 class="section-choose_item_title">đa nền tảng</h2>
-            <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="choose_item_content">
+              <h2 class="section-choose_item_title">đa nền tảng</h2>
+              <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
           </div>
           <!-- one item -->
           <div class="section-choose_item">
             <div class="section-choose_item_icon"></div>
-            <h2 class="section-choose_item_title">đa nền tảng</h2>
-            <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="choose_item_content">
+              <h2 class="section-choose_item_title">đa nền tảng</h2>
+              <p class="section-choose_item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
           </div>
           <!-- end item -->
         </div>
@@ -197,7 +205,7 @@
     </div>
   </section>
   <!-- section subscribe -->
-  <section class="section section-subcribe">
+  <section class="section section-subcribe lazy-load">
     <div class="container">
       <div class="row">
         <div class="col-md-8 section-subcribe_content">
