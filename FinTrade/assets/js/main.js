@@ -143,7 +143,7 @@ var LazyEffect = {
   },
   hide: function(){
     // console.log('hide', Date.now());
-    // let element = this;
+    let element = this;
     var ripple = null;
     var ripples = document.getElementsByClassName('lazy-ripple');
     if(ripples.length > 0){
@@ -155,10 +155,11 @@ var LazyEffect = {
     var relativeY = ripple.getAttribute('data-y');
     var scale = ripple.getAttribute('data-scale');
     var diff = Date.now() - Number(ripple.getAttribute('data-hold'));
-    var delay = 350 - diff;
+    var delay = 300 - diff;
     if(delay < 0){
       delay = 0;
     }
+    // console.log('delay', delay);
     setTimeout(function(){
       var style = {
         'top': relativeY + 'px',
@@ -178,6 +179,7 @@ var LazyEffect = {
       };
       ripple.setAttribute('style', convertStyle(style));
       setTimeout(function(){
+        // console.log(ripples[0]);
         try {
           element.removeChild(ripples[0]);
         } catch (e) {
@@ -310,7 +312,7 @@ function lazyLoad(){
 
   for (let i = 0; i < element.length; i++){
     var elementPosition = element[i].getBoundingClientRect();
-    console.log(elementPosition.y + element[i].clientHeight, window.innerHeight);
+    // console.log(elementPosition.y + element[i].clientHeight, window.innerHeight);
     if(elementPosition.y < window.innerHeight / 1.5
       && elementPosition.y + element[i].clientHeight >= window.innerHeight / 2
     ){

@@ -1,2 +1,3 @@
 .sass-cache/*
 assets/css/main.css.map
+node_modules/*

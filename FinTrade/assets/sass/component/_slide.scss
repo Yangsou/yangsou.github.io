@@ -6,37 +6,11 @@
 // @Last modified time: 2017-09-09T15:18:03+07:00
 // @License: MIT
 
-// $color-primary: #4FD769;
-// $color-black-primary: #020202;
-// $color-black-secondary: #181818;
-// $color-black-thirty: #222222;
-// $color-white: #fefefe;
-
-.section-sreenshoot{
-  background-color: $color-black-thirty;
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
 .slide-screen{
   text-align: center;
   perspective: 1000px;
-  // min-height: 768px;
   position: relative;
 }
-
-// .screen_smartphone{
-//   background-image: url(../images/iphone-industries.png);
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: 100%;
-//   position: absolute;
-//   width: 375px;
-//   height: 667px;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
 
 .screen_body{
   background-image: url(../images/iphone-industries.png);
@@ -75,7 +49,8 @@
   &-first{
     transform-origin: left;
     display: block;
-    transform: rotateY(-49deg) translate3d(-426px, 0px, 90px);
+    transform: translateX(-320px);
+    // transform: rotateY(-49deg) translate3d(-426px, 0px, 90px);
     box-shadow: -7px 5px 8px rgba(0,0,0,.15);
     z-index: 2;
     opacity: 1;
@@ -83,7 +58,8 @@
   &-second{
     transform-origin: left;
     display: block;
-    transform: rotateY(-31deg) translate3d(-213px, 0, 30px);
+    // transform: rotateY(-31deg) translate3d(-213px, 0, 30px);
+    transform: translateX(-230px);
     box-shadow: -7px 5px 8px rgba(0,0,0,.25);
     z-index: 3;
     opacity: 1;
@@ -96,7 +72,8 @@
   &-fourth{
     transform-origin: right;
     display: block;
-    transform: rotateY(31deg) translate3d(213px, 0, 30px);
+    // transform: rotateY(31deg) translate3d(213px, 0, 30px);
+    transform: translateX(230px);
     box-shadow: -7px 5px 8px rgba(0,0,0,.25);
     z-index: 3;
     opacity: 1;
@@ -104,7 +81,8 @@
   &-fifth{
     transform-origin: right;
     display: block;
-    transform: rotateY(49deg) translate3d(426px, 0px, 90px);
+    // transform: rotateY(49deg) translate3d(426px, 0px, 90px);
+    transform: translateX(320px);
     box-shadow: -7px 5px 8px rgba(0,0,0,.15);
     z-index: 2;
     opacity: 1;
@@ -131,6 +109,7 @@
   border-radius: 50%;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   &:hover{
     background-color: $color-black-secondary;
   }
@@ -139,13 +118,15 @@
   }
 }
 
-.screen_group-btn{
-  text-align: center;
-  margin-top: -90px;
-  @media (min-width: 768px){
-    margin-top: -60px;
-  }
-  @media (min-width: 768px){
-    margin-top: 0px;
-  }
+.screen_left{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.screen_right{
+  @extend .screen_left;
+  right: 0;
+  left: auto;
 }
