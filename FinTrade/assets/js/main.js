@@ -8,14 +8,35 @@
  * @License: MIT
  */
 
+ var bootstrap = function(evt){
+   if (evt.target.readyState === "interactive") { initLoader(); }
+   else if (evt.target.readyState === "complete") {
+     initApp();
+   }
+ }
+ document.addEventListener('readystatechange', bootstrap, false);
 
-
-window.onload = function(){
-  init();
+function initLoader(){
+  // _path.setAttribute("d", "M 0 80l 15 -15l 15 10l15 -30l15 21l15 -3l15 13l15 -40l15 33l15 -57l 15 20");
 }
 
-function init(){
+// window.onload = function(){
+//   init();
+// }
+
+function initApp(){
   console.log('window init');
+  var body = document.getElementsByTagName('body')[0];
+  var pageLoading = document.getElementById('page-loading');
+  var _path = document.getElementById('path-1');
+  pageLoading.onload = function(){
+    console.log('path loaded');
+  }
+  setTimeout( function(){
+    body.classList.remove('over-hidden');
+    body.removeChild(pageLoading);
+  }, 1000);
+
   //active header when loaded
   activeHeaderWhenScroll();
 

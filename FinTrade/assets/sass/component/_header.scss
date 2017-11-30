@@ -82,6 +82,11 @@ a{
   background: none;
   cursor: pointer;
 }
+//
+body.over-hidden{
+  overflow: hidden;
+}
+
 //header
 .header{
   z-index: 99;

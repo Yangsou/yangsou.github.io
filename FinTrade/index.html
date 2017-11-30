@@ -9,10 +9,75 @@
   <meta name="msapplication-navbutton-color" content="#020202">
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#020202">
+  <style type="text/css">
+    #page-loading{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      background-color: #fff;
+    }
+    #page-loading svg{
+      width: 300px; height: 160px;
+      position: fixed;
+      top: calc(50% - 80px);
+      left: calc(50% - 150px);
+    }
+    #path-1{
+      animation: dash 4000ms ease infinite;
+    }
+    @keyframes dash {
+      from{
+        stroke-dashoffset: 1000;
+      }
+      to{
+        stroke-dashoffset: 500;
+      }
+    }
+    .st0{fill:none;stroke:#f0f0f0;stroke-miterlimit:10;}
+    .path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      fill: transparent;
+    }
+    .path-bg{
+      stroke-dashoffset: 0;
+    }
+  </style>
   <link rel="stylesheet" href="assets/css/main.css"/>
+
   <title>Demo</title>
 </head>
-<body>
+<body class="over-hidden">
+  <div id="page-loading">
+    <svg version="1.1"
+      x="0px"
+      y="0px"
+    	viewBox="0 0 150 80" style="enable-background:new 0 0 120 80"
+      xml:space="preserve"
+      >
+    	<path
+    		class="path path-bg"
+    		d="M 0 80l 15 -15l 15 10l15 -30l15 21l15 -3l15 13l15 -40l15 33l15 -57l 15 20" stroke="#f0f0f0" />
+    	<path
+    		class="path" id="path-1"
+    		d="M 0 80l 15 -15l 15 10l15 -30l15 21l15 -3l15 13l15 -40l15 33l15 -57l 15 20" stroke="#20ce99">
+    	</path>
+      <!-- <animate
+        xlink:href="#path-1"
+        id="myAnimate"
+        attributeType="XML"
+        attributeName="stroke-dashoffset"
+        from="1000"
+        to="500"
+        dur="4s"
+        begin="0s;myAnimate.end"
+        repeatCount="infinite"
+        /> -->
+    </svg>
+  </div>
   <header class="header header-fixed">
     <div class="container">
       <div class="header_brand pull-left">

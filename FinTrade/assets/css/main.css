@@ -966,6 +966,9 @@ a {
   background: none;
   cursor: pointer; }
 
+body.over-hidden {
+  overflow: hidden; }
+
 .header {
   z-index: 99;
   -webkit-transition: all 550ms ease-in-out;
