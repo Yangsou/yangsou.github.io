@@ -71,10 +71,11 @@
 }
 .intro_slider{
   position: absolute;
-  right: 0;
+  left: 50%;
   bottom: 0;
   width: 375px;
   height: 667px;
+  transform: translate(50%, 60px);
   @media (max-width: 767px) and (orientation:portrait){
     // transform: translateX(0) translateY(-25%) scale(1);
     left: 386px;
@@ -402,7 +403,7 @@
 }
 
 .section-feature{
-  padding-top: 60px;
+  padding-top: 120px;
   padding-bottom: 60px;
   &_content{
     height: 100%;
@@ -757,7 +758,7 @@
   background: $color-primary;
   padding-top: 60px;
   // padding-bottom: 60px;
-  &_title{
+  .title{
     text-align: center;
     margin-bottom: 30px;
     font-size: 40px;
@@ -772,5 +773,101 @@
       display: block;
       margin: auto;
     }
+  }
+}
+
+// Download
+.download{
+  padding-top: 120px;
+  // padding-bottom: 60px;
+  &_text{
+    font-size: 18px;
+    text-align: center;
+    @include m-t(30);
+  }
+  &_group-btn{
+    text-align: center;
+  }
+  &_img{
+    display: block;
+    margin: 60px auto 0;
+    max-width: 768px;
+    transform: translateY(30px);
+  }
+}
+.title{
+  font-size: 40px;
+  &-center{
+    text-align: center;
+    &::after{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &-black-text{
+    color: $color-black-primary;
+  }
+  &-green-line::after{
+    background: $color-primary;
+  }
+}
+
+.btn-download{
+  width: 198px;
+  height: 48px;
+  display: inline-block;
+  border-radius: 48px;
+  background: $color-primary;
+  color: $color-white;
+  // font-size: 1.56em;
+  font-weight: bold;
+  position: relative;
+  margin-top: 16px;
+  text-align: left;
+  padding-left: 64px;
+  line-height: 1;
+  // -webkit-tap-highlight-color: rgba($color-black-secondary, .2);
+  overflow: hidden;
+  @media (max-width: 597px){
+    display: block;
+  }
+  &-gg{
+    background-color: #f55757;
+  }
+  &:hover{
+    // background: $color-primary;
+    color: #fff;
+    box-shadow: 0 0 4px rgba($color-primary, .5);
+    &::before{
+      display: block;
+    }
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: rgba($color-black-thirty, .1);
+    display: none;
+  }
+  .icon{
+    position: absolute;
+    top: 6px;
+    left: 24px;
+    width: 30px;
+    height: 30px;
+    svg{
+      fill: #fff;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .label-secondary{
+    display: block;
+    font-size: 12px;
+  }
+  .label-primary{
+    font-size: 20px;
+    display: block;
   }
 }

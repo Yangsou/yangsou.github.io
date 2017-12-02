@@ -1,9 +1,73 @@
 .footer{
-  background-color: $color-black-primary;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: $color-primary;
+  background-image: url(../images/istock-primary.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   &_body-center{
     text-align: center;
     color: rgba($color-white, .55);
     font-size: 0.89em;
     padding: 8px 0;
+  }
+  &_list{
+    list-style: none;
+    @include m-t(30);
+    li{
+      position: relative;
+      padding-left: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 24px;
+      @include m-t(15);
+      color: #fdfdfd;
+      &.location{
+        background-image: url(../images/icon-location.png);
+      }
+      &.phone{
+        background-image: url(../images/ic_phone_black.svg);
+      }
+      &.email{
+        background-image: url(../images/ic_mail_outline.svg);
+      }
+      &.fax{
+        background-image: url(../images/fax.svg);
+      }
+    }
+  }
+  .group-social{
+    text-align: right;
+  }
+  &_social{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    border-radius: 50%;
+    float: right;
+    &-facebook{
+      background-image: url(../images/facebook-logo.svg);
+      margin-right: 8px;
+    }
+    &-twitter{
+      background-image: url('../images/twitter-logo.svg');
+      margin-right: 8px;
+    }
+    &-google{
+      background-image: url('../images/google-logo.svg');
+    }
+  }
+  .title{
+    font-size: 30px;
+  }
+  .text{
+    color: $color-white;
+    @include m-t(30);
   }
 }

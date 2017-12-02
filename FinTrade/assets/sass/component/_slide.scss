@@ -29,6 +29,9 @@
   @media (min-width: 992px){
     transform: scale(1);
   }
+  @media (min-width: 1200px){
+    transform: scale(1) translateY(60px);
+  }
 }
 
 
