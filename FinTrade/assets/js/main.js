@@ -64,8 +64,10 @@ function initApp(){
   });
 
 
+  lazyLoad();
   window.addEventListener('scroll', function(){
     activeHeaderWhenScroll();
+    lazyLoad();
   });
 
   // handle click open or close right menu at mobile
@@ -74,8 +76,7 @@ function initApp(){
   window.addEventListener('click', function(e){
     toggleRightMenu(e, btnRightMenuHeader, rightMenuHeader);
   });
-  lazyLoad();
-  window.addEventListener('scroll', lazyLoad, false);
+  // window.addEventListener('scroll', lazyLoad, false);
 }
 
 // active or unactive header when scroll
@@ -330,12 +331,13 @@ function toggleRightMenu(event, element, secondElement){
 // lazy load when scroll
 function lazyLoad(){
   var element = document.getElementsByClassName('lazy-load');
+  // alert('element');
 
   for (let i = 0; i < element.length; i++){
     var elementPosition = element[i].getBoundingClientRect();
-    // console.log(elementPosition.y + element[i].clientHeight, window.innerHeight);
-    if(elementPosition.y < window.innerHeight / 1.5
-      && elementPosition.y + element[i].clientHeight >= window.innerHeight / 2
+    // alert(elementPosition.top);
+    if(elementPosition.top < window.innerHeight / 1.5
+      && elementPosition.top + element[i].clientHeight >= window.innerHeight / 2
     ){
       element[i].classList.add('active');
     }
