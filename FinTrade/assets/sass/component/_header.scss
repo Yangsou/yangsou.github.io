@@ -98,8 +98,12 @@ body.over-hidden{
   &.active{
     background: $color-black-primary;
     .header_brand{
-      padding-top: 12px;
-      padding-bottom: 12px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      @media (max-width: 767px){
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
     }
     .header_right{
       padding-top: 18px;

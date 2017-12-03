@@ -4,8 +4,16 @@
   background-color: $color-primary;
   background-image: url(../images/istock-primary.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: bottom left;
   background-size: cover;
+  @media (max-width: 767px){
+    .col-sm-6{
+      margin-bottom: 16px;
+    }
+    .col-xs-5{
+      padding-left: 0 !important;
+    }
+  }
   &_body-center{
     text-align: center;
     color: rgba($color-white, .55);
@@ -19,7 +27,7 @@
       position: relative;
       padding-left: 40px;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 18px;
       height: 24px;
       @include m-t(15);
       color: #fdfdfd;
@@ -64,10 +72,18 @@
     }
   }
   .title{
-    font-size: 30px;
+    font-size: 24px;
+    @media (min-width: 1440px){
+      font-size: 30px;
+    }
   }
   .text{
     color: $color-white;
     @include m-t(30);
+  }
+  .copyright{
+    color: $color-white;
+    font-size: 14px;
+    line-height: 36px;
   }
 }
