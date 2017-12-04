@@ -247,6 +247,7 @@
 .m-t-60{
   margin-top: 60px;
 }
+
 .home{
   &_btn{
     font-size: 14px;
@@ -306,6 +307,7 @@
     letter-spacing: 0.01em;
     font-size: 30px;
     line-height: 40px;
+    animation: to_left_slow 1550ms ease-in forwars;
     @media (min-width: 768px){
       font-size: 35px;
       line-height: 42px;
@@ -336,16 +338,9 @@
       margin-bottom: 30px;
     }
   }
-
 }
 
 //section 2
-.section-mini{
-  background-color: $color-black-thirty;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
 .section_secondary_text{
   font-size: 1.05em;
   color: #fdfdfd;
@@ -511,20 +506,28 @@
     @media (min-width: 768px){
       margin: 0 auto;
     }
-    .lazy-load.active &{
+    &.lazy-load.active{
       animation-duration: 550ms;
       animation-fill-mode: forwards;
       animation-timing-function: ease-in;
       @for $i from 0 through 4{
         &:nth-child(#{$i}){
-          animation-delay: 450ms * ($i - 1);
+          @media (min-width: 992px){
+            animation-delay: 450ms * ($i - 1);
+          }
         }
       }
       &.to-right{
         animation-name: feature_to_right;
+        @media (min-width: 992px){
+          animation-name: buble;
+        }
       }
       &.to-left{
         animation-name: feature_to_left;
+        @media (min-width: 992px){
+          animation-name: buble;
+        }
       }
     }
     &_title{
@@ -587,6 +590,17 @@
     transform: translateX(0);
   }
 }
+
+@keyframes buble {
+  0%{
+    opacity: 0.4;
+    transform: translateY(48px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 // end feature
 
 // function section
@@ -632,17 +646,36 @@
     background-image: url("../images/istock-secondary.png");
     background-repeat: no-repeat;
     background-position: bottom left;
-    background-size: contain;
+    background-size: cover;
   }
   &_phone{
-    @media (min-width: 1440px){
-      transform: translate(0, 120px);
+    opacity: 0;
+    transition: transform 550ms ease-in, opacity 650ms;
+    transform: translateX(-64px);
+    &.active{
+      transform: translateX(0);
+      opacity: 1;
+      @media (min-width: 1200px){
+        transform: translate(0, 120px);
+      }
     }
+
+  }
+  .lazy-load.active .title{
+    animation: to_left_fast 550ms cubic-bezier(0.47, 0, 0.75, 0.72) forwards;
+  }
+  .title{
+    opacity: 0;
+
   }
   &_title{
     color: $color-white;
     width: 300px;
     font-size: 1.17em;
+    opacity: 0;
+    .lazy-load.active &{
+      animation: to_left_fast 550ms cubic-bezier(0.47, 0, 0.75, 0.72) 440ms forwards;
+    }
     @include m-t(45);
     @media (min-width: 1440px){
       width: auto;
@@ -653,12 +686,30 @@
     font-size: 14px;
     line-height: 22px;
     @include m-t(30);
+    opacity: 0;
+    .lazy-load.active &{
+      animation: to_left_fast 550ms cubic-bezier(0.47, 0, 0.75, 0.72) 660ms forwards;
+    }
   }
   &_btn{
+    opacity: 0;
     @include m-t(30);
+    .lazy-load.active &{
+      animation: to_left_fast 550ms cubic-bezier(0.47, 0, 0.75, 0.72) 880ms forwards;
+    }
   }
 }
 
+@keyframes to_left_fast {
+  0%{
+    opacity: .4;
+    transform: translateX(96px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 // choose
 .choose{
   background: $color-white;
@@ -691,6 +742,31 @@
   &_item{
     text-align: center;
     margin-bottom: 36px;
+    opacity: 0;
+    &.lazy-load.active{
+      animation-duration: 550ms;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+      // @for $i from 0 through 6{
+      //   &:nth-child(#{$i}){
+      //     @media (min-width: 992px){
+      //       animation-delay: 450ms * ($i - 1);
+      //     }
+      //   }
+      // }
+      &.to-right{
+        animation-name: feature_to_right;
+        @media (min-width: 992px){
+          animation-name: buble;
+        }
+      }
+      &.to-left{
+        animation-name: feature_to_left;
+        @media (min-width: 992px){
+          animation-name: buble;
+        }
+      }
+    }
     &_title{
       font-size: 20px;
       line-height: 30px;
