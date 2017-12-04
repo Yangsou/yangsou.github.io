@@ -94,6 +94,7 @@ function activeHeaderWhenScroll(){
 function showEffect(e){
   var element = getLazyEffectElement(e);
   if(element !== null){
+    console.log('element', element);
     LazyEffect.show(e, element);
     element.addEventListener('mouseup', LazyEffect.hide, false);
     element.addEventListener('mouseleave', LazyEffect.hide, false);
@@ -165,7 +166,7 @@ var LazyEffect = {
   },
   hide: function(){
     // console.log('hide', Date.now());
-    let element = this;
+    var element = this;
     var ripple = null;
     var ripples = document.getElementsByClassName('lazy-ripple');
     if(ripples.length > 0){
@@ -333,7 +334,7 @@ function lazyLoad(){
   var element = document.getElementsByClassName('lazy-load');
   // alert('element');
 
-  for (let i = 0; i < element.length; i++){
+  for (var i = 0; i < element.length; i++){
     var elementPosition = element[i].getBoundingClientRect();
     // alert(elementPosition.top);
     if(elementPosition.top < window.innerHeight / 1.5
