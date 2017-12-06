@@ -30,6 +30,12 @@
   min-height: 567px;
   max-height: 1200px;
   perspective: 1000px;
+  &_phone{
+    transform: translateX(30px);
+    @media (min-width: 1440px){
+      transform: translateY(60px);
+    }
+  }
 }
 
 .home_intro_background{
@@ -75,11 +81,12 @@
     right: auto;
   }
   @media (max-width: 767px) and (orientation:landscape){
-    transform: scale(.51);
+    transform: scale(0.51) translateY(40vh);
+    transform-origin: center;
     right: auto;
   }
   @media (max-width: 597px){
-    transform: translate(10px, 50px) scale(0.6);
+    transform: translate(10px, 80px) scale(0.6);
     left: 110px;
     z-index: 1;
   }
@@ -87,12 +94,20 @@
     // transform: translateX(0) translateY(-15%) scale(.51);
     left: 210px;
   }
-  @media (min-width: 768px){
-    transform: translate(0,60px);
+  @media (min-width: 768px) and (max-width: 991px){
+    transform: translate(0,50%);
+    bottom: 50%;
+  }
+  @media (min-width: 992px){
+    transform: translate(0, 60px);
   }
   @media (min-width: 768px) and (max-width: 1439px){
     width: 319px;
     height: 520px;
+  }
+  @media (min-width: 1440px){
+    width: 420px;
+    transform: translate(0,0);
   }
   @media (min-width: 1921px){
     right: 25%;

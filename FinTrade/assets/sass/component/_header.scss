@@ -96,7 +96,7 @@ body.over-hidden{
     transform: translateX(-56px);
   }
   &.active{
-    background: $color-black-primary;
+    background: $color-primary;
     .header_brand{
       padding-top: 20px;
       padding-bottom: 20px;
@@ -159,7 +159,7 @@ body.over-hidden{
       transform-origin: left;
       transition: transform 550ms ease-in;
     }
-    @media (min-width: 768px){
+    @media (min-width: 992px){
       display: none;
     }
     .line{
@@ -215,7 +215,7 @@ main.show-right-menu{
     visibility: visible;
     transform: translateX(56px);
   }
-  @media (max-width: 767px){
+  @media (max-width: 991px){
     width: 256px;
     min-height: 100vh;
     position: fixed;
@@ -225,7 +225,7 @@ main.show-right-menu{
     // visibility: hidden;
     transform: translateX(100%);
   }
-  @media (min-width: 768px){
+  @media (min-width: 992px){
     display: block;
   }
   &_item{

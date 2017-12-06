@@ -41,9 +41,9 @@ function initApp(){
   activeHeaderWhenScroll();
 
   // slider initial
-  var index = 0;
-  var homeSliderItems = document.getElementsByClassName('slider_item');
-  Slider.sliderAutomatic(homeSliderItems, index);
+  // var index = 0;
+  // var homeSliderItems = document.getElementsByClassName('slider_item');
+  // Slider.sliderAutomatic(homeSliderItems, index);
 
   // controll effect btn
   var homeBtn = document.getElementsByClassName('home_intro_btn');
