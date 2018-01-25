@@ -77,18 +77,18 @@
           <span class="line"></span>
         </button>
         <ul class="header_right">
-          <li class="header_right_item"><a href="#">Trang chủ</a></li>
-          <li class="header_right_item"><a href="#">Chức năng</a></li>
-          <li class="header_right_item"><a href="#">Lý do chọn</a></li>
-          <li class="header_right_item"><a href="#">Giao diện</a></li>
-          <li class="header_right_item"><a href="#">Tải phần mêm</a></li>
-          <li class="header_right_item"><a href="#">Về chúng tôi</a></li>
+          <li class="header_right_item" data-nav="home"><a href="#">Trang chủ</a></li>
+          <li class="header_right_item" data-nav="typify"><a href="#">Chức năng tiêu biểu</a></li>
+          <li class="header_right_item" data-nav="new"><a href="#">Chức năng mới</a></li>
+          <li class="header_right_item" data-nav="choose"><a href="#">Lý do chọn chúng tôi</a></li>
+          <li class="header_right_item" data-nav="screen"><a href="#">Giao diện phần mềm</a></li>
+          <li class="header_right_item" data-nav="contact"><a href="#">Liên hệ</a></li>
         </ul>
       </div>
     </div>
   </header>
   <main>
-    <section class="section home_intro">
+    <section id="home" class="section home_intro">
       <div class="home_intro_background"></div>
       <!-- -->
       <div class="home_intro_description relative container">
@@ -114,7 +114,7 @@
     </section>
     <!-- end section primary -->
     <!-- section 2 -->
-    <section class="section section-feature">
+    <section id="typify" class="section section-feature">
       <div class="section container relative">
           <h1 class="feature_title title">Chức năng tiêu biểu</h1>
           <div class="row m-t-60">
@@ -145,7 +145,7 @@
       </div>
     </section>
     <!-- section 3 -->
-    <section class="function">
+    <section id="new" class="function">
       <div class="container relative">
         <div class="row">
           <div class="col-md-6">
@@ -167,7 +167,7 @@
       </div>
     </section>
     <!-- section 4 -->
-    <section class="section choose">
+    <section id="choose" class="section choose">
       <div class="container relative">
         <div class="row">
           <div class="relative col-sm-6 choose_phone">
@@ -246,7 +246,7 @@
       </div>
     </section>
     <!-- screen shoot -->
-    <section class="screenshoot">
+    <section id="screen" class="screenshoot">
       <div class="screen_title">
         <h1 class="title title-underline">Giao Diện Phần Mềm</h1>
       </div>
@@ -320,7 +320,7 @@
       <img src="assets/images/download-phone.png" class="download_img img-reponsive" />
     </section>
     <!-- footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
@@ -353,6 +353,6 @@
 
     </footer>
   </main>
-  <script type="text/javascript" src="assets/js/main.min.js"></script>
+  <script type="text/javascript" src="assets/js/main-v.1.min.js"></script>
 </body>
 </html>

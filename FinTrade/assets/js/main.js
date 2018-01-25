@@ -20,6 +20,8 @@ function initLoader(){
   // _path.setAttribute("d", "M 0 80l 15 -15l 15 10l15 -30l15 21l15 -3l15 13l15 -40l15 33l15 -57l 15 20");
 }
 
+
+
 // window.onload = function(){
 //   init();
 // }
@@ -76,7 +78,20 @@ function initApp(){
   window.addEventListener('click', function(e){
     toggleRightMenu(e, btnRightMenuHeader, rightMenuHeader);
   });
-  // window.addEventListener('scroll', lazyLoad, false);
+
+  // navigation click
+  var navItems = document.getElementsByClassName('header_right_item');
+  var docBody = document.documentElement || document.body;
+  for (var i = 0; i < navItems.length; i++) {
+    console.log('navItems');
+    navItems[i].addEventListener('click', function(e){
+      e.preventDefault();
+      var elementID = this.getAttribute('data-nav');
+      var element = document.getElementById(elementID);
+      scrollTo(docBody, element.offsetTop - 72, 1024);
+
+    })
+  }
 }
 
 // active or unactive header when scroll
@@ -345,3 +360,15 @@ function lazyLoad(){
 
   }
 }
+
+// scroll element to ...
+function scrollTo(element, to, duration){
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+    if (difference == 0) return;
+    setTimeout( function(){
+      element.scrollTop = element.scrollTop + perTick;
+      this.scrollTo(element, to, duration - 10);
+    }, 10);
+  }
