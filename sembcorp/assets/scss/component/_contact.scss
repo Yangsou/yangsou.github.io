@@ -1,0 +1,33 @@
+.search-tag-group {
+  padding: 8px;
+  margin-bottom: 32px;
+  background-color: #fff;
+  .tags__text {
+    display: inline-flex;
+    align-items: center;
+    .icon {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      opacity: .4;
+      margin-left: 4px;
+    }
+  }
+}
+
+.contact {
+  &__wrap {
+    background-color: #fff;
+    padding: 15px;
+    p {
+      color: $--color--dark;
+    }
+    small {
+      color: $--color--dark;
+      font-weight: bold;
+      &.text--green {
+        color: $--color--green;
+      }
+    }
+  }
+}

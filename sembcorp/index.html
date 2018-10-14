@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>home</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <!-- left navigation -->
+  <nav class="navigation">
+    <a href="index.html" class="navigation__brand">
+      <img src="assets/img/logo.jpg" class="img-responsive" alt="logo">
+    </a>
+    <div class="navigation__menu">
+      <div class="navigation__menu__item active">
+          <a href="index.html">Home</a>
+      </div>
+      <div class="navigation__menu__item">
+        <a href="./contact.html">Contact Report</a>
+      </div>
+      <div class="navigation__menu__item">
+          <a href="#">Search Tags</a>
+      </div>
+      <div class="navigation__menu__item">
+          <a href="#">Setting</a>
+      </div>
+    </div>
+  </nav>
+  <!-- end left navigation -->
+
+  <section class="main">
+    <!-- header -->
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="header__search-form">
+              <span class="icon icon--search"></span>
+              <input type="text" class="form-control">
+            </div>
+            <span class="header__name rounded-circle">A</span>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <div class="content container">
+      <div class="row justify-content-between content__title">
+        <h1>Recent</h1>
+        <button type="button"
+          class="btn btn__add btn-outline-primary btn-lg"
+          data-toggle="modal" data-target="#uploadModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#06362a"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+          <!-- <span class="icon icon--large icon--cover icon--add"></span> -->
+          Upload
+        </button>
+      </div>
+      <!-- upload modal -->
+      <div class="modal fade"
+        id="uploadModal" tabindex="-1"
+        role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog upload-modal" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Upload</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <span aria-hidden="true">&times;</span> -->
+                <span class="icon icon--large icon--close"></span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="upload-title" class="col-form-label">TITLE</label>
+                    <input type="text" class="form-control" id="upload-title">
+                  </div>
+                  <div class="form-group">
+                    <label for="upload-purpose" class="col-form-label">PURPOSE</label>
+                    <textarea class="form-control" id="upload-purpose"></textarea>
+                  </div>
+                  <div class="form-group upload-modal__search-tag">
+                    <label for="upload-search-tag">SEARCH TAG</label>
+                    <input class="form-control" id="upload-search-tag" placeholder="Add tag"/>
+                    <span class="icon icon--arrow_drop_down"></span>
+                    <div class="suggesstion" id="upload-search-tag-suggest">
+                      <ul class="suggesstion__list">
+                        <li>Corporate</li>
+                        <li class="active">Follow-up</li>
+                        <li>Misc</li>
+                        <li>New</li>
+                        <li class="active">Private</li>
+                        <li>Sample 1</li>
+                        <li>Sample 2</li>
+                        <li>Sample 3</li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn__add btn-primary btn-lg">
+                Upload
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end upload modal -->
+      <div class="row">
+          <table class="table content__list">
+            <thead>
+              <tr>
+                <th>TITLE AND PURPOSE</th>
+                <th>MARKETER</th>
+                <th>DATE</th>
+                <th width="50">ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <h3>Samsung</h3>
+                  <p class="margin-bottom--xs">First Project Envisioning Meeting</p>
+                  <div class="tags">
+                    <span class="tags__text">Corporate</span>
+                    <span class="tags__text">Next Step</span>
+                    <span class="tags__text">Follow up</span>
+                    <span class="tags__text">MISC</span>
+                  </div>
+                </td>
+                <td>Dannis Wiss</td>
+                <td>13/10/2018</td>
+                <td>
+                  <button class="btn btn__more-vert">
+                    <span class="icon icon--more-vert"></span>
+                  </button>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+      </div>
+      
+    </div>
+    
+  </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,144 @@
+.main {
+  width: calc(100% - #{$--width-navigation});
+  margin-left: $--width-navigation;
+  background-color: #f0f0f0;
+}
+
+.content {
+  min-height: calc(100vh - #{$--height-header});
+  padding-top: $--height-header;
+  padding-bottom: $--spacing-xl;
+  &__title {
+    margin-bottom: $--spacing-xl;
+  }
+  .btn__add {
+    display: flex;
+    align-items: center;
+    &:hover {
+      svg > path:first-child {
+        fill: #fff;
+      }
+    }
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__list {
+    background-color: #fff;
+    thead th {
+      border-top-color: transparent;
+      &:first-child {
+        padding-left: $--height-header;
+      }
+    }
+    td:first-child {
+      padding-left: $--height-header;
+    }
+  }
+}
+
+.btn-outline-primary,
+.btn-primary {
+  color: $--color-primary;
+  border-color: $--color-primary;
+  &:hover {
+    background-color: $--color-primary;
+    color: #fff;
+  }
+}
+.btn-primary {
+  background-color: $--color-primary;
+  color: #fff;
+}
+
+.btn__more-vert {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.text--green {
+  color: $--color--green;
+}
+.tags {
+  &__text {
+    background-color: #dcdcdc;
+    border-radius: 8px;
+    padding: 4px;
+    // font-weight: bold;
+    &:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+  &__input {
+    display: inline-block;
+    width: auto;
+    border-color: transparent;
+    &:focus {
+      border-color: transparent;
+      outline-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
+.upload-modal {
+  .modal-header {
+    border-bottom-color: transparent;
+  }
+  .modal-footer {
+    border-top-color: transparent;
+  }
+  .modal-title {
+    font-size: 1.7em;
+    font-weight: bold;
+  }
+  &__search-tag {
+    position: relative;
+    input {
+      &:focus {
+        border-color: #ced4da;
+        box-shadow: none;
+        outline-color: transparent;
+        border-radius: 4px 4px 0 0;
+        ~ #upload-search-tag-suggest {
+          display: block;
+        }
+      }
+    }
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 34px;
+    }
+    .suggesstion {
+      display: none;
+      // position: absolute;
+      width: 100%;
+      // left: 0;
+      // bottom: 0;
+      // transform: translateY(100%);
+      border: 1px solid #ced4da;
+      border-radius: 0 0 4px 4px;
+      &__list {
+        list-style: none;
+        li {
+          padding: 4px 8px;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            background-color: $--color-bg;
+          }
+          &.active::after {
+            content: "\2714";
+            position: absolute;
+            top: 2px;
+            right: 8px;
+            color: $--color--dark;
+          }
+        }
+      }
+    }
+  }
+}

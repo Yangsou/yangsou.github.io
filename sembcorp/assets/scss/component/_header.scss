@@ -1,0 +1,27 @@
+.header {
+  background-color: $--color-primary;
+  height: $--height-header;
+  .container, .row {
+    height: $--height-header;
+  }
+  &__name {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: $--color-bg;
+    font-weight: bold;
+  }
+  &__search-form {
+    position: relative;
+    width: calc(100% / 12 * 8);
+    input {
+      padding-left: 48px;
+    }
+    .icon { 
+      position: absolute;
+      top: 4px;
+      left: 15px;
+    }
+  }
+}

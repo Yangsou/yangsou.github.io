@@ -1,0 +1,51 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $--width-navigation;
+  height: 100%;
+  &__brand {
+    margin: 8px;
+    display: block;
+    text-align: center;
+    img {
+      height: $--spacing-2xl;
+    }
+  }
+  &__menu {
+    margin-top: $--height-header;
+    &__item {
+      height: 64px;
+      position: relative;
+      line-height: 64px;
+      font-size: 1.5em;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8px;
+        height: 100%;
+        background-color: transparent;
+      }
+      &.active {
+        a {
+          color: $--color-primary;
+        }
+        &::before {
+          background-color: $--color-primary;
+        }
+      }
+      a {
+        display: block;
+        padding-left: 56px;
+        text-decoration: none;
+        color: $--color--dark;
+        &:hover {
+          color: $--color-primary;
+        }
+      }
+    }
+  }
+}
