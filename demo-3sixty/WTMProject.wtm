@@ -1,0 +1,1 @@
+{"title":"demo-3sixty","panoramas":[{"panofile":"testpanorama.jpg","hotspots":[{"hotspotid":"CXuU2ZdLQE","title":"host-1","position":"-4879.58, 575.00, 873.60","actions":[{"type":0,"target":"panoramas/ga-1.jpg"}]}]},{"panofile":"ga-1.jpg","hotspots":[]}],"settings":{"description":"New 3Sixty Virtual Tour Project","loadingtext":"Loading...","firstpanorama":"testpanorama.jpg"}}
