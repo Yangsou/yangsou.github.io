@@ -11,8 +11,28 @@ function initLoader() {
 
 function initApp(){
   console.log('web readyState');
-  window.addEventListener('click', showEffect, false);
-  handleCloseSection();
+  // window.addEventListener('click', showEffect, false);
+  // handleCloseSection();
+  // document.getElementsByClassName('menu__btn')
+}
+function onClickMenu(_this) {
+  const id = _this.getAttribute('data-id');
+  console.log(id)
+  const pages = document.getElementsByClassName('page'),
+    nextPage = document.getElementById(id),
+    menus = document.getElementsByClassName('menu__btn');
+  for (let index = 0; index < pages.length; index++) {
+    const element = pages[index],
+      menu = menus[index];
+    element.classList.add('hidden');
+    menu.classList.remove('active');
+  }
+  nextPage.classList.remove('hidden');
+  _this.classList.add('active');
+}
+function downloadCV() {
+  console.log('NGUYEN-TRUNG-NAM')
+  window.open('./assets/NGUYEN-TRUNG-NAM.pdf')
 }
 
 function showEffect(e){

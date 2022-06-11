@@ -4,40 +4,242 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link href="main.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/da12b8f529.js" crossorigin="anonymous"></script>
+    <link href="./main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FFDB6E',
+              black500: '#1E1E1F',
+              black700: '#121212',
+              colorSurface: '#2a2a2b',
+              gradientGray: "linear-gradient(137.84deg, #3F3F40 2.69%, #303030 93.75%)"
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+    </style>
   </head>
-  <body>
-    <main id="main">
-      <div class="primary">
-        <div class="primary_avatar">
-          <img src="assets/image/avatar.png" />
-        </div>
-        <div class="primary_item primary_item-school" data-section="education">
-          <div>
-            <span class="text">School</span>
+  <body class="bg-black700">
+      <div class="container relative mx-auto rounded-lg gap-x-4 py-10">
+          <!-- side bar  -->
+          <div class="sidebar sticky top-8 sm:w-1/4 box-outer bg-black500 text-white rounded-2xl p-4">
+            <div class="w-20 h-20 overflow-hidden rounded-full bg-gray-600 mx-auto">
+              <img src="./assets/image/avatar.png" class="w-full h-full object-cover" />
+            </div>
+            <div class="text-center">
+              <p class="text-2xl text-center my-2">Nguyen Trung Nam</p>
+              <span class="bg-colorSurface text-white px-2 py-1 rounded-lg mx-auto">Frontend team leader</span>
+            </div>
+            <div class="w-full h-[1px] my-4 mx-auto bg-colorSurface"></div>
+
+            <ul>
+              <li class="flex">
+                <span class="box box-icon"><i class="fa-solid fa-envelope text-primary"></i></span>
+                <div class="overflow-hidden">
+                  <p class="text-slate-50	text-xs opacity-70">EMAIL</p>
+                  <p class="text-white text-ellipsis overflow-hidden">namnguyentrung95@gmail.com</p>
+                </div>
+              </li>
+              <li class="flex pt-4">
+                <span class="box box-icon"><i class="fa-solid fa-phone text-primary"></i></span>
+                <div>
+                  <p class="text-slate-50	text-xs opacity-70">PHONE</p>
+                  <p class="text-white inline-flex">0964376134</p>
+                </div>
+              </li>
+              <li class="flex pt-4">
+                <span class="box box-icon"><i class="fa-solid fa-calendar text-primary"></i></span>
+                <div>
+                  <p class="text-slate-50	text-xs opacity-70">BIRTH DAY</p>
+                  <p class="text-white inline-flex">04/01/1995</p>
+                </div>
+              </li>
+            </ul>
+            <button onclick="downloadCV()" class="rounded-full mt-6 mx-auto block bg-gradient-primary hover:text-white px-4 py-2 font-bold">Download CV</button>
           </div>
-        </div>
-      </div>
-    </main>
-    <section id="education" class="section section-education">
-      <div class="section_content">
-        <h1 class="section_content_title">Education</h1>
-        <div class="section_content_child">
-          <h2>The University of Information Technology</h2>
-          <p>Time: Oct 2013</p>
-          <p>Major: Science and Information Technology</p>
-        </div>
-        <div class="section_content_child">
-          <h2>NewStar</h2>
-          <p>Time: 2014</p>
-          <p>Success PHP course at NewStar. <br />
-            It's the first time I knew about web development and loved it till now.<br />
-            Today, I remember that as the starting place for my way to be a professional developer.
-          </p>
-        </div>
-      </div>
-    </section>
-    <button id="btn-close-section" class="section_btn-close">close</button>
-    <script src="assets/js/main.js"></script>
+          <!-- end sidebar -->
+
+          <!-- Main content -->
+          <div class="main bg-black500 box-outer mt-10 sm:mt-0 rounded-2xl p-4 relative">
+            <!-- menu -->
+            <ul class="menu bg-colorSurface absolute top-0 right-0 flex text-white z-10">
+              <li>
+                <button onclick="onClickMenu(this)" data-id="about" class="menu__btn active hover:opacity-70">About</button>
+              </li>
+              <li>
+                <button onclick="onClickMenu(this)" data-id="collection" class="menu__btn hover:opacity-70">Collection</button>
+              </li>
+              <li>
+                <button onclick="onClickMenu(this)" data-id="blog" class="menu__btn hover:opacity-70">Blog</button>
+              </li>
+              <li>
+                <button onclick="onClickMenu(this)" class="menu__btn hover:opacity-70">Contact</button>
+              </li>
+            </ul>
+            <!-- END menu -->
+            <!-- ABOUT ME -->
+            <div class="page" id="about">
+              <p class="text-3xl text-white title">About me</p>
+              <div class="mt-8">
+                <p class="text-white">Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                <p class="text-white mt-2">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+              </div>
+  
+              <section class="section section-education mt-10">
+                <div class="section_content">
+                  <h1 class="text-white text-2xl mb-4">Experience</h1>
+                  <div class="section_content_child">
+                    <h2>Nexlab</h2>
+                    <p class="text-sm text-gray-400">Time: Oct 2020</p>
+                    <p class="text-sm text-gray-400">Working as a leader of the front-end team. <br />
+                      Responsible for team management, project deployment.</p>
+                  </div>
+                  <div class="section_content_child">
+                    <h2>USER</h2>
+                    <p class="text-sm text-gray-400">Time: 2018</p>
+                    <p class="text-sm text-gray-400">Front end developer<br />
+                      Working as a front-end developer, who develop and maintain some projects, eg: Soundfyr, Indigo, CMA
+                    </p>
+                  </div>
+                  <div class="section_content_child">
+                    <h2>Tesse</h2>
+                    <p class="text-sm text-gray-400">Time: 2016</p>
+                    <p class="text-sm text-gray-400">Front end developer<br />
+                      - Front-end Developer in the Tesse team <a href="https://tesse.io" target="_blank">(https://tesse.io)</a>
+                      <br/>
+                      Convert PSD to HTML, using CSS with Post CSS, SCSS and material-ui
+                      <br/>
+                      - ReactJs 
+                      <br/>
+                      - REST Full API
+                    </p>
+                  </div>
+                </div>
+              </section>
+  
+              <section class="section mt-10">
+                <h1 class="text-white text-2xl mb-4">My skills</h1>
+                <div class="img-list flex flex-wrap">
+                  <img src="./assets/image/vue.svg" />
+                  <img src="./assets/image/react.svg" />
+                  <img src="./assets/image/graphql.svg" />
+                  <img src="./assets/image/hasura.svg" />
+                  <img src="./assets/image/js.svg" />
+                  <img src="./assets/image/sass.png" />
+                  <img src="./assets/image/tailwind.png" />
+                </div>
+              </section>
+            </div>
+            <!-- END ABBOUT ME -->
+            <!-- COLLECTION -->
+            <div class="page hidden" id="collection">
+              <p class="text-3xl text-white title">Collection</p>
+
+              <div class="mt-10 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+                <div class="relative rounded-2xl overflow-hidden collection__item">
+                  <img class="w-full" src="./assets/image/daikin.png" />
+                  <p class="absolute bottom-4 left-0 right-0 text-center text-lg text-white">Whole Ecosystem</p>
+                  <div class="collection__description absolute top-0 left-0 right-0 bottom-0 hidden items-center">
+                    <p class="text-sm text-center px-2">Daikin is the global No.1 air conditioning manufacturer. We help Daikin to digitalize their whole ecosystem (warehouse, sale/ business, service).</p>
+                  </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden collection__item">
+                  <img class="w-full" src="./assets/image/cc-core.png" />
+                  <p class="absolute bottom-4 left-0 right-0 text-center text-lg text-white">Internal Management System</p>
+                  <div class="collection__description absolute top-0 left-0 right-0 bottom-0 hidden items-center">
+                    <p class="text-sm text-center px-2">CC Core helps CII, a top infrastructure investment company in Vietnam, drastically increase project efficiency and accountability by streamlining and mobilizing project communications and documentation.</p>
+                  </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden collection__item">
+                  <img class="w-full" src="./assets/image/indigo.png" />
+                  <p class="absolute bottom-4 left-0 right-0 text-center text-lg text-white">Education System</p>
+                  <div class="collection__description absolute top-0 left-0 right-0 bottom-0 hidden items-center">
+                    <p class="text-sm text-center px-2">Indigo Education Group, one of the biggest private education centers in Singapore, helps students in Asia gain confidence in their abilities and develop their academic and career interests through language mastery. We provide Indigo, a very complicated project, an end-to-end, full product development</p>
+                  </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden collection__item">
+                  <img class="w-full" src="./assets/image/fe-credit.png" />
+                  <p class="absolute bottom-4 left-0 right-0 text-center text-lg text-white">HR Apps</p>
+                  <div class="collection__description absolute top-0 left-0 right-0 bottom-0 hidden items-center">
+                    <p class="text-sm text-center px-2">FE CREDIT is the market leader in the consumer finance industry in Vietnam. With more than 20,000 employees, FE Credit needs a good Human Resource Management solution and we were trusted by them to do that.</p>
+                  </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden collection__item">
+                  <img class="w-full" src="./assets/image/soundfyr.png" />
+                  <p class="absolute bottom-4 left-0 right-0 text-center text-lg text-white">Music Platform</p>
+                  <div class="collection__description absolute top-0 left-0 right-0 bottom-0 hidden items-center">
+                    <p class="text-sm text-center px-2">From being a radio DJ with a syndicated radio show in more than 100 cities before, rocked with his live DJ sets, been in a rock band, ran a successful corporate event company and more, music has always been a part of his journey in so many ways</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END COLLECTION -->
+
+            <!-- Blog -->
+            <div class="page hidden" id="blog">
+              <p class="text-3xl text-white title">Blog</p>
+              <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <div class="card bg-colorSurface shadow-xl rounded-2xl">
+                  <figure>
+                    <img class="rounded-t-2xl" src="https://trungnam.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627698987153%2FePiWVl3fV.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75" alt="PDFMake: Getting started with PDF printing in pure javascript" />
+                  </figure>
+                  <div class="card-body py-2 px-4">
+                    <a href="https://trungnam.hashnode.dev/pdfmake-getting-started-with-pdf-printing-in-pure-javascript" target="_blank" class="text-white hover:text-gray-300 text-xl">PDFMake: Getting started with PDF printing in pure javascript</a>
+                    <p class="text-ellipsis-mutliple text-gray-400 text-sm">have you been generated and printed a pdf file in javascript? I found some libraries which support both client and server side. I tried to use and test to get a library that is suitable for me, I mean my project's requirement, and finally, I chosed pdfmake.</p>
+                  </div>
+                </div>
+                <div class="card bg-colorSurface shadow-xl rounded-2xl">
+                  <figure>
+                    <img class="rounded-t-2xl" src="https://trungnam.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1628033707504%2FkI_XFCXAGu.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75" alt="Javascript: Reset image's orientation before uploading" />
+                  </figure>
+                  <div class="card-body py-2 px-4">
+                    <a href="https://trungnam.hashnode.dev/javascript-reset-images-orientation-before-uploading" target="_blank" class="text-white hover:text-gray-300 text-xl">Javascript: Reset image's orientation before uploading</a>
+                    <p class="text-ellipsis-mutliple text-gray-400 text-sm">The images can have 8 orientation types like the image below and we have reset its orientation, I mean to convert to be like the first image.</p>
+                  </div>
+                </div>
+                <div class="card bg-colorSurface shadow-xl rounded-2xl">
+                  <figure>
+                    <img class="rounded-t-2xl" src="https://trungnam.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1627603527831%2FwOyBmvStM.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75" alt="One of the best practices about Git-flow" />
+                  </figure>
+                  <div class="card-body py-2 px-4">
+                    <a href="https://trungnam.hashnode.dev/javascript-reset-images-orientation-before-uploading" target="_blank" class="text-white hover:text-gray-300 text-xl">One of the best practices about Git-flow</a>
+                    <p class="text-ellipsis-mutliple text-gray-400 text-sm">Currently, I'm working on a co-system project, which is using to manage customers, products, etc. Although Web Front-end team size is two, using Git-flow is necessary and important.</p>
+                  </div>
+                </div>
+                <div class="card bg-colorSurface shadow-xl rounded-2xl">
+                  <figure>
+                    <img class="rounded-t-2xl" src="https://trungnam.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Funsplash%2FpUAM5hPaCRI%2Fupload%2Fv1654920160863%2FZumR2s-8l.jpeg%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75" alt="5 things help front end web developers be better" />
+                  </figure>
+                  <div class="card-body py-2 px-4">
+                    <a href="https://trungnam.hashnode.dev/5-things-help-front-end-web-developers-be-better" target="_blank" class="text-white hover:text-gray-300 text-xl">5 things help front end web developers be better</a>
+                    <p class="text-gray-400 text-sm">--</p>
+                  </div>
+                </div>
+                <div class="card bg-colorSurface shadow-xl rounded-2xl">
+                  <figure>
+                    <img class="rounded-t-2xl" src="https://trungnam.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Funsplash%2FpypeCEaJeZY%2Fupload%2Fv1654920419136%2F42kF4vHyI.jpeg%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75" alt="Javascript: How to read and get data from an excel file" />
+                  </figure>
+                  <div class="card-body py-2 px-4">
+                    <a href="https://trungnam.hashnode.dev/javascript-how-to-read-and-get-data-from-an-excel-file" target="_blank" class="text-white hover:text-gray-300 text-xl">Javascript: How to read and get data from an excel file</a>
+                    <p class="text-gray-400 text-sm">--</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END Blog -->
+          </div>
+          <!-- End main content -->
+    </div>
+    
   </body>
+  <script src="./assets/js/main.js"></script>
 </html>
