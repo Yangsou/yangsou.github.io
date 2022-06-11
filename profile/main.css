@@ -225,6 +225,8 @@ body, html {
 @media screen and (min-width: 640px) {
   .img-list {
     margin-left: -16px;
+  }
+  .img-list img {
     width: 100px;
     margin-left: 16px;
   }

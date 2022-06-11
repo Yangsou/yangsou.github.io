@@ -52,7 +52,7 @@
 				height: 100%;
 				overflow: hidden;
 				background-color: #000;
-				color; black;
+				color: black;
 			}
 
 			a:link, a:visited{
@@ -97,18 +97,22 @@
 		<div id="tmp">
 			<div style="width: 100%; height: 100%; overflow: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
 			<div style="position: absolute; top: 0; right: 0; padding: 10px; color: red; font-size: 20px; z-index: 10;" onclick="hideTemp()"><i class="fa fa-times"></i></div>
-		</div>
+		</div>
+
     	<script>
 			
             var container = document.querySelector( '#container' );
 			/*panolens*/
-var viewer = new PANOLENS.Viewer( { container: container , controlBar: true,  output: 'console' , autoHideInfospot: false, } );
-/*panolens-end*/
+
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: true,  output: 'console' , autoHideInfospot: false, } );
+
+/*panolens-end*/
 			
 			viewer.addUpdateCallback(function(){});
 			
 			/*panoramas*/
-var testpanorama = new PANOLENS.ImagePanorama( "panoramas/testpanorama.jpg" );
+
+var testpanorama = new PANOLENS.ImagePanorama( "panoramas/testpanorama.jpg" );
 						testpanorama.addEventListener('progress', function(e){
 							$("#loading").show();
 						});
@@ -118,27 +122,36 @@
 						testpanorama.addEventListener('click', function(e){
 						});
 
-var infospottestpanorama0 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+
+var infospottestpanorama0 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
 							infospottestpanorama0.position.set( -4879.58, 575.00, 873.60 );
 							testpanorama.add(infospottestpanorama0);
-infospottestpanorama0.addEventListener('click', function(){
-viewer.setPanorama( ga-1 );
-});
-viewer.add( testpanorama );
-var ga-1 = new PANOLENS.ImagePanorama( "panoramas/ga-1.jpg" );
-						ga-1.addEventListener('progress', function(e){
-							$("#loading").show();
-						});
-						ga-1.addEventListener('load', function(e){
-							$("#loading").fadeOut();
-						});
-						ga-1.addEventListener('click', function(e){
-						});
 
-viewer.add( ga-1 );
-$(document).ready(function(){ viewer.setPanorama( testpanorama ); });
+infospottestpanorama0.addEventListener('click', function(){
 
-/*panoramas-end*/
+viewer.setPanorama( ga-1 );
+
+});
+
+viewer.add( testpanorama );
+
+// var ga-1 = new PANOLENS.ImagePanorama( "panoramas/ga-1.jpg" );
+// 						ga-1.addEventListener('progress', function(e){
+// 							$("#loading").show();
+// 						});
+// 						ga-1.addEventListener('load', function(e){
+// 							$("#loading").fadeOut();
+// 						});
+// 						ga-1.addEventListener('click', function(e){
+// 						});
+
+
+// viewer.add( ga-1 );
+
+$(document).ready(function(){ viewer.setPanorama( testpanorama ); });
+
+
+/*panoramas-end*/
             
 			
 			function hideTemp(){
